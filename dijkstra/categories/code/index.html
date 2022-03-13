@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+    <base href="http://www.gamerachan.org/fubu/dijkstra/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Fubu">
+
+<meta name="description" content="">
+
+<title>Code</title>
+<meta name="generator" content="Hugo 0.92.2" />
+<link rel="stylesheet" href="css/pojoaque.min.css">
+<script src="js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<link  href="http://www.gamerachan.org/fubu/dijkstra//css/theme.min.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="http://www.gamerachan.org/fubu/dijkstra/img/favicon.png">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    
+    <h3 class="home-link">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/"> ⊳Root</a>
+        <a href="index.xml"> ⊳RSS</a> 
+    </h3>
+
+    
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/code/">code</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/hardware/">hardware</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/linux/">linux</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/misc/">misc</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/msx/">msx</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/music/">music</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+
+<div class="articles-list">
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2021-06-15-removing_javascript/">Removing Javascript</a> - 2021-06-15 19:39:47</h3>
+        Hello!
+Probably nobody cares, but I have removed the share section (twitter + facbeook) because it required to load 300kb for the icons plus random javascripts.
+We want this to be light.
+On the other hand I have removed the &ldquo;last posts&rdquo; from the index. This is because it needed to recompile ALL the posts everytime because this list is always updated. This way&hellip; only the last post needs to be compiled!
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2020-11-02-pyspark_udf_types/">Pyspark and UDF types problem</a> - 2020-11-02 12:20:05</h3>
+        Hello!
+Here is a fast note that might not be obvious. Beware with UDF types in PySpark.
+from pyspark.sql.functions import udf from pyspark.sql.types import IntegerType, FloatType def very_fun(idk): return(22) def floating_fun(idk): return(22.0) df = sqlContext.createDataFrame( [ (1, 'foo'), (2, 'bar'), ], ['id', 'txt'] ) funfun_int = udf(very_fun, IntegerType()) funfun_float = udf(very_fun, FloatType()) floatingfun_int = udf(floating_fun, IntegerType()) floatingfun_float = udf(floating_fun, FloatType()) df = df.withColumn('funfun_int', funfun_int(df['id'])) df = df.withColumn('funfun_float', funfun_float(df['id'])) df = df.
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2017-07-05-msx-for/">Z80 For Loop</a> - 2017-07-05 08:10:27</h3>
+        WHILE – FOR:
+We usually use B as counter.
+LD C, 5 LD A, 0 LD B, 100 .NEXT2: push BC LD B, 10 .NEXT: ADD A, C DJNZ .NEXT pop BC DJNZ .NEXT2 
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2017-05-19-leaflet-on-jupyter/">Leaflet on Jupyter</a> - 2017-05-19 08:10:27</h3>
+        To do: Improve text. Give examples. Explain stuff, dude…!
+You need this package:
+https://github.com/ellisonbg/ipyleaflet
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2017-05-19-jupyter-customization-nbsextensions-and-themes/">Jupyter Customization: NBSExtensions and themes</a> - 2017-05-19 08:07:49</h3>
+        To do: Intro, write the article better.
+https://github.com/ipython-contrib/jupyter_contrib_nbextensions
+Installing nbsextensions:
+sudo pip install jupyter_contrib_nbextensions
+Color customization:
+Make file ~/.jupyter/custom/custom.css
+try: https://github.com/powerpak/jupyter-dark-theme
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2017-05-12-sparkr-gapply-mess/">SparkR gapply mess</a> - 2017-05-12 08:56:31</h3>
+        Hello,
+Do not assume anything. Never. Ever. Specially with SparkR (Apache Spark 2.1.0).
+When using the gapply function, maybe you want to return the key to mark the results in a function as follows:
+countRows &lt;- function(key, values) { df &lt;- data.frame(key=key, nvalues=nrow(values)) return(df) } count &lt;- gapplyCollect(data, &quot;keyAttribute&quot;, countRows) countRows &lt;- function(key, values) { df &lt;- data.frame(key=key, nvalues=nrow(values)) return(df) } count &lt;- gapplyCollect(data, &quot;keyAttribute&quot;, countRows) SURPRISE. You can&rsquo;t.
+You should get this error:
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2016-09-03-asmsx-bugfix-1-ifs-on-megarom/">asMSX bugfix 1: Ifs on .megarom</a> - 2016-09-03 12:49:45</h3>
+        Hello!
+Finally some improvements on asMSX. At the start of this project JamQue told me that he had issues using ifs when the “.megarom” clause is active. The issue correction can be seen here in Github.
+The problem was that when generating a byte (for example, an LD instruction) it checks if it is able to generate it if the condition established for this level allows it.
+Original:
+The first if will only affect the if(type!
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2016-08-20-learning-bison-and-flex-the-calculator/">Learning Bison and Flex: The calculator</a> - 2016-08-20 18:28:25</h3>
+        Hello everynyan,
+I’m learning how Bison and Flex work with an O’Reilly book and there can be found an example on how to build a calculator (which has an error on the code, probably there are more in the book, that’s why it has that kind of critics, but it works.).
+I ended up making an extension on it just to test my forgotten grammar skills. The code is the following:
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2016-08-20-understanding-asmsx-volume-2-lex-l/">Understanding asMSX Volume 2: lex.l</a> - 2016-08-19 23:27:42</h3>
+        Welcome back to the mystery machine!
+Today, the spooky lex.l. As we saw in the previous post this file is full with constants, but to be more precise this is the file where you tell how to treat every string found. In fact, constants are not defined in this file but in dura.y,
+For example:
+ “ld return MNEMO_LD”: Whenever you find a string that’s which characters ld, treat is as a token with value MNEMO_LD (Mnemotechnic for Load instruction).
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2016-08-17-understanding-asmsx-volume-1-understanding-the-structure-of-the-code/">Understanding asMSX Volume 1: Understanding the structure of the code</a> - 2016-08-16 23:00:08</h3>
+        Hello!
+Welcome to another trip into another dark cave. Today we meet asMSX, an assembler for MSX’s Z80 made by Pitpan and bought and released with GPL license by cjv99 (Thanks!).
+Motivation
+It’s known that this assembler has some bugs, e.g. skipping IFDEFs when using MegaROM so there is an interest on knowing the internals of the code in order to fix this kind of bugs. My goal is not directly fixing bugs of this code but to provide more information about the code so all the people from the community may get themselves the code and fix it if there are any new bugs.
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2016-03-24-on-r-and-parallelism/">On R and parallelism</a> - 2016-03-24 01:20:01</h3>
+        R, that language that is has gained its momentum due to the people discovering the need of analyzing data. There are other several alternatives but this is my poison (or poisson!) of choice. In this post we will try to cover how to parallelize your R code with the package parallel.
+ Why bother? One of my main concerns when I was starting with R is that “WOW! Everything runs in one thread!
+    </article>
+    
+</div>
+
+</div>
+</div>
+
+
+</body>
+</html>
+

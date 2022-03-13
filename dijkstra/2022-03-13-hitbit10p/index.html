@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+    <base href="http://www.gamerachan.org/fubu/dijkstra/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Fubu">
+
+<meta name="description" content="">
+
+<title>Modifying a Sony Hitbit 10P to use a standard barrel jack power supply</title>
+<meta name="generator" content="Hugo 0.92.2" />
+<link rel="stylesheet" href="css/pojoaque.min.css">
+<script src="js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<link  href="http://www.gamerachan.org/fubu/dijkstra//css/theme.min.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="http://www.gamerachan.org/fubu/dijkstra/img/favicon.png">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    
+    <h3 class="home-link">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/"> ⊳Root</a>
+        <a href="index.xml"> ⊳RSS</a> 
+    </h3>
+
+    
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/code/">code</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/hardware/">hardware</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/linux/">linux</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/misc/">misc</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/msx/">msx</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/music/">music</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Modifying a Sony Hitbit 10P to use a standard barrel jack power supply</h1>
+<h4>Published 2022-03-13 07:37:39</h4>
+<article>
+    <p>Greetings everyone!</p>
+<p>A couple of weeks ago I got a Sony HitBit 10p from a mechanical keyboard
+enthusiast from the University, a great guy :). He know where to leave MSX
+things. There was a particular issue: There was no power supply. <a href="2019-07-09-changing_t7_power_unit/">After changing
+one power supply for a Sony HB-T7</a> I thought
+that it would not be much of a problem. And actually it was not!</p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/img/20220313_10p/1placa1.jpg"><img src="http://www.gamerachan.org/fubu/dijkstra/img/20220313_10p/dith/1placa1.png" alt="Board"></a></p>
+<p>I found <a href="https://www.youtube.com/watch?v=TaatOZ_rohE">a tutorial in spanish on how to do this with a phone charger.</a>
+As you can see in the video, what he does is to use a soldering point below the
+switch connector to solder a 5v input.</p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/img/20220313_10p/2placa2.jpg"><img src="http://www.gamerachan.org/fubu/dijkstra/img/20220313_10p/dith/2placa2.png" alt="Switch connector"></a></p>
+<p>After reviewing a bit the board traces, I saw that the point where the guy from
+the video soldered was the same as the actual input. So, it lead to the power
+connector.</p>
+<p><a href="https://www.msx.org/wiki/Sony_AC-HB1">In MRC there is information about the power supply</a>
+and with this I finally understood.</p>
+<pre tabindex="0"><code>Output:
+    DC6V ⎓ 900mA
+    AC16V ~ 160mA 
+</code></pre><p><a href="http://www.gamerachan.org/fubu/dijkstra/img/20220313_10p/3conector_corrient.jpg"><img src="http://www.gamerachan.org/fubu/dijkstra/img/20220313_10p/dith/3conector_corrient.png" alt="Power connector"></a></p>
+<p>As we can see in this picture, the left pin is the GND, the center pin is the 6V
+DC input and the left is the 16V AC input.</p>
+<p>There is a 16V AC supply that is used to generate at some point in the board the
+-12/+12V signals. I could not trace where it is converted, because my knowledge
+on electronics is rather poor. But about the 6V DC, that&rsquo;s the main power supply
+for the MSX. As side note, all the MSX runs with 5V and it needs the -12/+12V
+for some expansions like FMPAC. I do not own any expansions that require this
+voltage so&hellip; I was going to do the same as the guy in the video did.</p>
+<p>The thing is, the power supply provides 6V but in the video he uses a 5v supply,
+so <strong>I assume that it is tolerant to undervolting</strong>. The same happens with the
+Casio PV7 machine, as the original power supply had a 10V input but 9V is
+sufficient to use it. If anyone has more information, please <a href="mailto:agutierrez@posteo.net">contact me</a>.</p>
+<p>So&hellip; the thing was urgent. I had to do it. At 11PM. So I got a barrel jack
+power switch and desoldered it to have an &ldquo;el cheapo power connector&rdquo;.</p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/img/20220313_10p/4apanyo.jpg"><img src="http://www.gamerachan.org/fubu/dijkstra/img/20220313_10p/dith/4apanyo.png" alt="El cheapo connector"></a>
+<a href="http://www.gamerachan.org/fubu/dijkstra/img/20220313_10p/5cutre.jpg"><img src="http://www.gamerachan.org/fubu/dijkstra/img/20220313_10p/dith/5cutre.png" alt="El cheapo connector outside"></a></p>
+<p>So, I connected the center of the barrel jack (so I can use a modern
+positive-center power supply) to the 6V input (the center pin from the power
+connector picture) and the other cable to the GND (the left of the power
+connector picture).  It is really trashy, but it works. I will buy a proper
+connector ASAP.</p>
+<p>And&hellip; I had to test it with the BESTEST game in the world:</p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/img/20220313_10p/6importante.jpg"><img src="http://www.gamerachan.org/fubu/dijkstra/img/20220313_10p/dith/6importante.png" alt="Lode Runner runs"></a></p>
+<p>And&hellip; that it! It works! So now this MSX will start its new life.</p>
+<p>At some point, if I am not lazy, I will investigate how the input is used to
+convert to -12/+12V so that I can remove the components that do the conversion
+and install a board from <a href="https://msxmakers.design.blog/">MSXMakers</a> that
+transform 5v into the -12/+12V. I have used it for the Omega MSX and it works
+pretty well :).</p>
+<p>I hope you can fix your MSX too!</p>
+
+</article>
+
+
+
+</div>
+</div>
+
+
+</body>
+</html>
+

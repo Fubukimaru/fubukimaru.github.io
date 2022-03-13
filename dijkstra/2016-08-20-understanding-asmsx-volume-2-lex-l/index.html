@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+    <base href="http://www.gamerachan.org/fubu/dijkstra/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Fubu">
+
+<meta name="description" content="">
+
+<title>Understanding asMSX Volume 2: lex.l</title>
+<meta name="generator" content="Hugo 0.92.2" />
+<link rel="stylesheet" href="css/pojoaque.min.css">
+<script src="js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<link  href="http://www.gamerachan.org/fubu/dijkstra//css/theme.min.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="http://www.gamerachan.org/fubu/dijkstra/img/favicon.png">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    
+    <h3 class="home-link">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/"> ⊳Root</a>
+        <a href="index.xml"> ⊳RSS</a> 
+    </h3>
+
+    
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/code/">code</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/hardware/">hardware</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/linux/">linux</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/misc/">misc</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/msx/">msx</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/music/">music</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Understanding asMSX Volume 2: lex.l</h1>
+<h4>Published 2016-08-19 23:27:42</h4>
+<article>
+    <p>Welcome back to the mystery machine!</p>
+<p>Today, the spooky lex.l. As we saw in the previous post this file is full with constants, but to be more precise this is the file where you tell how to treat every string found. In fact, constants are not defined in this file but in dura.y,</p>
+<p>For example:</p>
+<ul>
+<li>“ld              return MNEMO_LD”: Whenever you find a string that’s which characters ld, treat is as a token with value  MNEMO_LD (Mnemotechnic for Load instruction).</li>
+<li>“0x[0-9a-f]+ yylval.val=(int)strtol(yytext,NULL,16);return NUMERO;”: Whenever you find 0x followed by 1 or more characters from the set {0-9a-f} (hence, hex), transform them to a long int (as strol can treat hex values directly) and then to an int and set it to the yylvval, which is the flex’s return value, and return that this token is a number.</li>
+</ul>
+<p>So as you have seen, at least in this case, Flex is the one that is in charge of understanding the meaning of each token as defined in this file.</p>
+<p>Except for a some lines found in the last part of the document that I haven’t understood yet, the rest of the document follows more or less one of the two previous examples.</p>
+<p>Finally I believe that I have found an issue on the tokenizer. If we take a close look to the following line we will notice something that could be wrong:</p>
+<p>.?db/[ \t]+ return PSEUDO_DB;</p>
+<p>If we take a look to <a href="http://flex.sourceforge.net/manual/The-period-isn_0027t-working-the-way-I-expected_002e.html">flex’s manual</a>, we can see the following phrase:</p>
+<blockquote>
+<p>A ‘<!-- raw HTML omitted --><!-- raw HTML omitted -->.<!-- raw HTML omitted --><!-- raw HTML omitted -->’ inside ‘<!-- raw HTML omitted --><!-- raw HTML omitted -->[]<!-- raw HTML omitted --><!-- raw HTML omitted -->’’s just means a literal‘<!-- raw HTML omitted --><!-- raw HTML omitted -->.<!-- raw HTML omitted --><!-- raw HTML omitted -->’ (period), and NOT “any character except newline”.</p>
+</blockquote>
+<p>In this case .?db will match with adb, xdb, zdb, 3db and so on as it means “match any character except newline”, it doesn’t mean that it will have optionally a dot. If this is true, a way to fix this is to just set [.]?db/[ \t]+, but I have to test it yet.</p>
+<p>Moreover there are some regex (regex stand for <a href="https://en.wikipedia.org/wiki/Regular_expression">regular expression</a>) that could be simplified. E.g.:</p>
+<p>[a-z_]+[a-z0-9_]* yylval.tex=yytext;return IDENTIFICADOR;</p>
+<p>Is equal to:</p>
+<p>[a-z_][a-z0-9_]* yylval.tex=yytext;return IDENTIFICADOR;</p>
+<p>In this regex we are forcing that a label must start with a letter or an underscore, but after that we can also use numbers, therefore we do not need to have the + (one or more elements) in that expression, as the second and following elements will be also covered by the more general [a-z0-9_]*.</p>
+<p>Step by step everything of this great work is becoming clearer!</p>
+<p>See you next time!</p>
+<p> </p>
+<p>P.S.: One mystery of the file: \042 or \42 refers to the charater <strong>“</strong>.</p>
+
+</article>
+
+
+
+</div>
+</div>
+
+
+</body>
+</html>
+

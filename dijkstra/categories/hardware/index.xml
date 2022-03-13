@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hardware on El Fubu</title>
+    <link>http://www.gamerachan.org/fubu/dijkstra/categories/hardware/</link>
+    <description>Recent content in Hardware on El Fubu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-UK</language>
+    <lastBuildDate>Sun, 13 Mar 2022 07:37:39 +0100</lastBuildDate><atom:link href="http://www.gamerachan.org/fubu/dijkstra/categories/hardware/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modifying a Sony Hitbit 10P to use a standard barrel jack power supply</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2022-03-13-hitbit10p/</link>
+      <pubDate>Sun, 13 Mar 2022 07:37:39 +0100</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2022-03-13-hitbit10p/</guid>
+      <description>Greetings everyone!
+A couple of weeks ago I got a Sony HitBit 10p from a mechanical keyboard enthusiast from the University, a great guy :). He know where to leave MSX things. There was a particular issue: There was no power supply. After changing one power supply for a Sony HB-T7 I thought that it would not be much of a problem. And actually it was not!
+
+I found a tutorial in spanish on how to do this with a phone charger.</description>
+    </item>
+    
+    <item>
+      <title>Changing MSX HB-T7 Power Supply Unit</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2019-07-09-changing_t7_power_unit/</link>
+      <pubDate>Tue, 09 Jul 2019 08:03:18 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2019-07-09-changing_t7_power_unit/</guid>
+      <description>Hellllooooo everyone!
+I&amp;rsquo;m alive, again. Maki asked me to make a blog post about how we changed the MSX HitBit T7 japanese power supply unit (from now on PSU) for a more modern and european one. So, let&amp;rsquo;s do this.
+Update (2020-05-29): Victor Muñoz tutorial Victor Muñoz followed this post (plus the discussion we have had on email) and did this mod. He has shared with me a PDF containing the tutorial he has made.</description>
+    </item>
+    
+    <item>
+      <title>Sony HitBit 55/75P dead VRAM diagnosis</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2017-02-25-sony-hitbit-5575p-dead-vram-diagnosis/</link>
+      <pubDate>Sat, 25 Feb 2017 10:48:47 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2017-02-25-sony-hitbit-5575p-dead-vram-diagnosis/</guid>
+      <description>Hey!
+Recently I bought a broken 75P just for fun (and well, it was cheap :)). It had a video problem which, after reading a couple of msx.org posts (Hit-bit With Broken Graphics and 75P black screen mainly), I believed it was a problem of VRAM as Grauw pointed.
+That was a clever way to debug it. Watching how Basic characters are output, you can see which bit is broken in the ASCII chart.</description>
+    </item>
+    
+  </channel>
+</rss>

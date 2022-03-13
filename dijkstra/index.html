@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+<head>
+    <base href="http://www.gamerachan.org/fubu/dijkstra/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Fubu">
+
+<meta name="description" content="">
+
+<title>El Fubu</title>
+<meta name="generator" content="Hugo 0.92.2" />
+<link rel="stylesheet" href="css/pojoaque.min.css">
+<script src="js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<link  href="http://www.gamerachan.org/fubu/dijkstra//css/theme.min.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="http://www.gamerachan.org/fubu/dijkstra/img/favicon.png">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    
+    <h3 class="home-link">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/"> ⊳Root</a>
+        <a href="index.xml"> ⊳RSS</a> 
+    </h3>
+
+    
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/code/">code</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/hardware/">hardware</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/linux/">linux</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/misc/">misc</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/msx/">msx</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/music/">music</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+
+<div class="articles-list">
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2022-03-13-hitbit10p/">Modifying a Sony Hitbit 10P to use a standard barrel jack power supply</a> - 2022-03-13 07:37:39</h3>
+        Greetings everyone!
+A couple of weeks ago I got a Sony HitBit 10p from a mechanical keyboard enthusiast from the University, a great guy :). He know where to leave MSX things. There was a particular issue: There was no power supply. After changing one power supply for a Sony HB-T7 I thought that it would not be much of a problem. And actually it was not!
+
+I found a tutorial in spanish on how to do this with a phone charger.
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2021-08-22-vortex_tracker_msx/">How to config your Vortex Tracker for the MSX computers family</a> - 2021-08-22 19:56:31</h3>
+        Hello my friends!
+This is a reminder for me and for the future generations to come. I&rsquo;m not going to show you anything very magical or new, but this happen to me and I didn&rsquo;t have clue about it. So if you didn&rsquo;t know, now you will!
+Are you tired of compsing something in Vortex Tracker and hearing something odd when playing it in the machine? Your tracker might be wrongly configured!
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2021-07-14-searching_in_google/">Overloaded and unsatisfied when searching in Google</a> - 2021-07-14 04:58:05</h3>
+        Welcome to the longest post to the date in this blog!
+Today we have something very random: Thoughts about searching in Google. At 5AM with Massive Attack! (Mezzanine is a great Album)
+Have you ever been in a position where you want to find a piece of daily life information like &ldquo;How to be more spontaneous/escape routine&rdquo; or &ldquo;How to improve my sleep&rdquo;? And boom! You get like a bazillion results.
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2021-06-18-testing_dithering/">Testing dithering and color reduction</a> - 2021-06-18 17:36:52</h3>
+        Hello!
+I&rsquo;m trying to convert images so that they are lighter. I got the idea from Low-Tech Magazine and got some help and information from a good guy.
+Using ImageMagick:
+convert input.jpg -set colorspace Gray -ordered-dither o8x8 -colors 2 output.gif From this image:
+We get this one:
+From 72KB to 16KB. Looks a lot like the gameboy camera actually. There are other dithering algorithms, but for this photo the ordered-dither gave the best picture.
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2021-06-15-removing_javascript/">Removing Javascript</a> - 2021-06-15 19:39:47</h3>
+        Hello!
+Probably nobody cares, but I have removed the share section (twitter + facbeook) because it required to load 300kb for the icons plus random javascripts.
+We want this to be light.
+On the other hand I have removed the &ldquo;last posts&rdquo; from the index. This is because it needed to recompile ALL the posts everytime because this list is always updated. This way&hellip; only the last post needs to be compiled!
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2020-11-02-pyspark_udf_types/">Pyspark and UDF types problem</a> - 2020-11-02 12:20:05</h3>
+        Hello!
+Here is a fast note that might not be obvious. Beware with UDF types in PySpark.
+from pyspark.sql.functions import udf from pyspark.sql.types import IntegerType, FloatType def very_fun(idk): return(22) def floating_fun(idk): return(22.0) df = sqlContext.createDataFrame( [ (1, 'foo'), (2, 'bar'), ], ['id', 'txt'] ) funfun_int = udf(very_fun, IntegerType()) funfun_float = udf(very_fun, FloatType()) floatingfun_int = udf(floating_fun, IntegerType()) floatingfun_float = udf(floating_fun, FloatType()) df = df.withColumn('funfun_int', funfun_int(df['id'])) df = df.withColumn('funfun_float', funfun_float(df['id'])) df = df.
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2020-09-04-susumu_hirasawa_darkness_duai_solid_air/">Susumu Hirasawa - Darkness ⲡ duai &#43; Solid Air</a> - 2020-09-04 11:59:44</h3>
+        Susumu Hirasawa appreciation post. Solid Air is part of P-Model works, but Susumu is able to mix it with Darkness ⲡ duai perfectly.
+Let&rsquo;s rumble:
+  
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2020-08-10-tower_of_dolls/">Castlevania: Order of Ecclesia - Tower of Dolls</a> - 2020-08-10 12:37:37</h3>
+        I don&rsquo;t only live from weird japanese things. Today, some castlevania.
+  
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2020-05-22-p_model_miku_bijutsukan/">Vocaloid (P-Model) - Bijutsukan de atta hito daro</a> - 2020-05-22 10:55:37</h3>
+        I would have never expected a vocaloid cover of P-Model. But it does exist. And it&rsquo;s amazing. I have to find the CD &ldquo;Hatsune Miku Sings New Wave&rdquo;.
+  Bonus track
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2020-05-22-p_model_spitirus/">P-model - Spitirus</a> - 2020-05-22 08:52:37</h3>
+        Oh Spiritus! Oh SPIiiiiiiiIIIIIIIIIiIiiiiiiiiiiiritussssssssssss!
+  
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2020-03-06-osamu_sato_transmigration/">Osamu Sato - Transmigration</a> - 2020-03-06 11:58:37</h3>
+        Lately I have been only posting music. We&rsquo;ll, that&rsquo;s what I like to do at the moment, so&hellip; ¯_(ツ)_/¯
+This time I bring you Osamu Sato&rsquo;s Transmigration. It&rsquo;s a weird album mixing pseudo-futuristic sound with strange folk chants. I haven&rsquo;t played through all the Osamu Sato&rsquo;s Tong-Nou, a superb weird experience into his mind made into a game, however the first song is clearly the opening theme.
+I hope you enjoy.
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2020-02-19-kiki_vivi_lily/">Kiki Vivi Lily - 80denier</a> - 2020-02-19 11:28:10</h3>
+        Lately this blog is only about music&hellip; 🤔
+Today we have Kiki Vivi Lily. Yes the name is a bit weird, but her music is pretty good and full of a chill feeling.
+I hope you like it!
+  
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2020-02-07-denkigroove/">Denki Groove -  ピエール瀧の体操42歳</a> - 2020-02-07 09:03:49</h3>
+        Today we have Denki Groove in the menu with their 42 year old Pierre gimnastics. Probably one of the most eccentric and well done videos that I have ever seen. Wait until the song gets dramatic :).
+Enjoy!
+  
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2020-02-04-speedtube/">P-Model - Speed Tube</a> - 2020-02-04 09:46:02</h3>
+        Oh sweet!
+  HIGHHH SPEEEEEEEEEEEEED TUUUUUUUUUUUUUUUUBE
+Yes, I&rsquo;m very hooked.
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2020-01-31-naibu/">Naibu - Opium Lady</a> - 2020-01-31 08:00:24</h3>
+        Good morning! Today I bring you a piece of very cool DnB with some touches of asian feeling.
+Please, enjoy Naibu:
+  
+    </article>
+    
+</div>
+
+    <ul class="pagination pagination-default">
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 1" class="page-link" role="button">1</a>
+      </li>
+      <li class="page-item">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+      </li>
+      <li class="page-item">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
+      </li>
+      <li class="page-item">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
+      </li>
+      <li class="page-item">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/page/4/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul>
+</div>
+</div>
+
+
+</body>
+</html>
+

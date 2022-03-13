@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+    <base href="http://www.gamerachan.org/fubu/dijkstra/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Fubu">
+
+<meta name="description" content="">
+
+<title>Understanding asMSX Volume 1: Understanding the structure of the code</title>
+<meta name="generator" content="Hugo 0.92.2" />
+<link rel="stylesheet" href="css/pojoaque.min.css">
+<script src="js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<link  href="http://www.gamerachan.org/fubu/dijkstra//css/theme.min.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="http://www.gamerachan.org/fubu/dijkstra/img/favicon.png">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    
+    <h3 class="home-link">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/"> ⊳Root</a>
+        <a href="index.xml"> ⊳RSS</a> 
+    </h3>
+
+    
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/code/">code</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/hardware/">hardware</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/linux/">linux</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/misc/">misc</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/msx/">msx</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/music/">music</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Understanding asMSX Volume 1: Understanding the structure of the code</h1>
+<h4>Published 2016-08-16 23:00:08</h4>
+<article>
+    <p>Hello!</p>
+<p>Welcome to another trip into another dark cave. Today we meet asMSX, an assembler for MSX’s Z80 made by Pitpan and bought and released with GPL license by cjv99 (Thanks!).</p>
+<p><strong>Motivation</strong></p>
+<p>It’s known that this assembler has some bugs, e.g. skipping IFDEFs when using MegaROM so there is an interest on knowing the internals of the code in order to fix this kind of bugs. My goal is not directly fixing bugs of this code but to provide more information about the code so all the people from the community may get themselves the code and fix it if there are any new bugs.</p>
+<p>My main objective is, therefore, to provide more documentation and references for understanding asMSX. I’ll write what I understrand from the code in this blog (which will act as my notebook) and also I’ll try to create a doxygen documentation for the code.</p>
+<p>I made a repository on GitHub (<a href="https://github.com/Fubukimaru/asMSX)">https://github.com/Fubukimaru/asMSX)</a>. Feel free to fork it or comment.</p>
+<p><strong>On the structure of the code</strong></p>
+<p>First of all we have to understand that this assembler is coded using C and two well known tools for developing compilers, <!-- raw HTML omitted -->Flex<!-- raw HTML omitted --> and <!-- raw HTML omitted -->Bison<!-- raw HTML omitted -->.</p>
+<p>Flex is a lexical analyzer generator that creates lexers or scanners usually for tokenizing the text given. On the other hand, Bison is a parser generator that is used to get the text and transform it by using the grammar defined.</p>
+<p>The source code is formed by the following files:</p>
+<ul>
+<li>dura.y: Bison file defining the grammar along with auxiliar functions.</li>
+<li>final.c: File that contains the main function of the assembler.</li>
+<li>lex.l: Flex file that gets the tokens and transforms them to constants that can be understood by dura.y parser.</li>
+<li>makefile and makefile.win: Makefiles for Linux and Windows</li>
+<li>parser1.l: Preprocesor 1. As listed in the code, it’s in charge of:
+<ul>
+<li>Eliminate all comments.</li>
+<li>Eliminate blank lines.</li>
+<li>Eliminate duplicated spaces and tabulators.</li>
+<li>Include source file name and line numbers.</li>
+<li>Manage INCLUDE files nested up to 16 levels.</li>
+<li>Supports MS-DOS, Windows, Linux and Mac text source files.</li>
+</ul>
+</li>
+<li>parser2.l: Preprocesor 2. In charge of:
+<ul>
+<li>Unroll REPT/ENDR macro.</li>
+<li>Manage nested REPT/ENDR.</li>
+</ul>
+</li>
+<li>parser3.l: Preprocesor 3. In charge of:
+<ul>
+<li>Identify ZILOG macro.</li>
+<li>Set accordingly indirection and mathematical style.</li>
+</ul>
+</li>
+</ul>
+<p>In this case, all the code is chained from final.c main. First we have the preprocess done by the 3 parser.l and then tokenization is done by flex.l and then all is transformed using the grammar defined in dura.y.</p>
+<p>On the next post I’ll investigate how dura.y and lex.l work, i.e. learning how Bison and Flex work. I’m going to use the book <!-- raw HTML omitted -->Flex &amp; Bison (O’Reilly)<!-- raw HTML omitted -->. Comments say that it’s not good as it contains many errors, but let’s give it a try!</p>
+<p>See you next time!</p>
+
+</article>
+
+
+
+</div>
+</div>
+
+
+</body>
+</html>
+

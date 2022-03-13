@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+    <base href="http://www.gamerachan.org/fubu/dijkstra/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Fubu">
+
+<meta name="description" content="">
+
+<title>SparkR gapply mess</title>
+<meta name="generator" content="Hugo 0.92.2" />
+<link rel="stylesheet" href="css/pojoaque.min.css">
+<script src="js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<link  href="http://www.gamerachan.org/fubu/dijkstra//css/theme.min.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="http://www.gamerachan.org/fubu/dijkstra/img/favicon.png">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    
+    <h3 class="home-link">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/"> ⊳Root</a>
+        <a href="index.xml"> ⊳RSS</a> 
+    </h3>
+
+    
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/code/">code</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/hardware/">hardware</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/linux/">linux</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/misc/">misc</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/msx/">msx</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/music/">music</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>SparkR gapply mess</h1>
+<h4>Published 2017-05-12 08:56:31</h4>
+<article>
+    <p>Hello,</p>
+<p>Do not assume anything. Never. Ever. Specially with SparkR (Apache Spark 2.1.0).</p>
+<p>When using the gapply function, maybe you want to return the key to mark the results in a function as follows:</p>
+<pre tabindex="0"><code>countRows &lt;- function(key, values) {
+    df &lt;- data.frame(key=key, nvalues=nrow(values))
+    return(df)
+}   
+
+count &lt;- gapplyCollect(data, &quot;keyAttribute&quot;, countRows)
+</code></pre><pre tabindex="0"><code>countRows &lt;- function(key, values) {
+    df &lt;- data.frame(key=key, nvalues=nrow(values))
+    return(df)
+}   
+count &lt;- gapplyCollect(data, &quot;keyAttribute&quot;, countRows)
+</code></pre><p>SURPRISE. You can&rsquo;t.</p>
+<p>You should get this error:</p>
+<pre tabindex="0"><code>Error in match.names(clabs, names(xi)): names do not match previous names
+</code></pre><p>Well, that&rsquo;s weird. Why is this happening?</p>
+<p>Actually, key is a list because you can specify more than one column, therefore it already has a descriptor name which overwrites the one you specify, producing that two different keys have two different names. An easy way to fix this is just to unlist the key</p>
+<pre tabindex="0"><code>countRows &lt;- function(key, values) {
+    df &lt;- data.frame(key=unlist(key), nvalues=nrow(values))
+    return(df)
+}   
+
+count &lt;- gapplyCollect(data, &quot;keyAttribute&quot;, countRows)
+</code></pre><p><strong>MIND THAT THIS DOES NOT WORK WHEN YOU USE MORE THAN ONE COLUMNS FOR GROUPING!</strong></p>
+
+</article>
+
+
+
+</div>
+</div>
+
+
+</body>
+</html>
+

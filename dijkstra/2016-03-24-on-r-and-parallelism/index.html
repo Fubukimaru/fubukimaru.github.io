@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+    <base href="http://www.gamerachan.org/fubu/dijkstra/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Fubu">
+
+<meta name="description" content="">
+
+<title>On R and parallelism</title>
+<meta name="generator" content="Hugo 0.92.2" />
+<link rel="stylesheet" href="css/pojoaque.min.css">
+<script src="js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<link  href="http://www.gamerachan.org/fubu/dijkstra//css/theme.min.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="http://www.gamerachan.org/fubu/dijkstra/img/favicon.png">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    
+    <h3 class="home-link">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/"> ⊳Root</a>
+        <a href="index.xml"> ⊳RSS</a> 
+    </h3>
+
+    
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/code/">code</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/hardware/">hardware</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/linux/">linux</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/misc/">misc</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/msx/">msx</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/music/">music</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>On R and parallelism</h1>
+<h4>Published 2016-03-24 01:20:01</h4>
+<article>
+    <p>R, that language that is has gained its momentum due to the people discovering the need of analyzing data. There are other several alternatives but this is my poison (or poisson!) of choice. In this post we will try to cover how to parallelize your R code with the package <em>parallel</em>.</p>
+<p> </p>
+<h3 id="why-bother">Why bother?</h3>
+<p>One of my main concerns when I was starting with R is that <em>“WOW! Everything runs in one thread!”</em>. I was amazed by the fact that the language was still being used with that issue inside. How fool I was! Parallelism is doable in R. But, why must we bother about it? If we were still living in the era where we only had one core inside the CPU it won’t be an issue, but some smart guys thought that there was an issue when trying to set higher frequencies to the CPUs (power consumption mainly) and they decided to put more CPUs in a chip instead of going to a single faster core. That has been our paradigm for a couple of years and it appears to be working, right?</p>
+<p>So, having a single process engulfing and devouring a single core (or thread) of our CPU while the others are idle may be a good idea in some cases, but we want the results fast. ASAP, right? Let’s use all our resources!</p>
+<p> </p>
+<h3 id="how">How</h3>
+<p>To do so we will use the package <em>parallel</em>. First we must install and load the package:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Now we must define our cluster. In <em>parallel</em> library there are two possible choices for cluster: Socket clusters and Fork clusters. From the documentation:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>The first method is an interface  for both kinds of cluster (type = “PSOCK” or type = “FORK”). PSOCK cluster uses <a href="https://en.wikipedia.org/wiki/Network_socket">sockets</a> as communication interface. On the other hand, FORK creates new worker processes that will do the task. Details on both approaches are yet not clear to me, if anyone reads this and has further information, please leave a comment. Moreover, if we would like to have an MPI cluster, we can also specify it in the type, but this cluster will be managed by <em>snow</em> package (Note to myself: I should learn about OpenMPI).</p>
+<p>Seen all this, if we just want to do our ten-fold Cross Validation in parallel (because you’re aware that this is totally parallelizable), we can use  the makeCluster function in a lazy way: just give the function the number of cores you want to use in your local machine and forget about the rest.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>That was easy, right? But, what if I don’t want to hardcode the number of cores? Well, there is a function that gives you the number of cores you have (physical or logical).</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Ah, that was easy. We can use now all our cores. Nice, huh? OK, we created the cluster… now what?</p>
+<p>We define the following silly matrix:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Now imagine that we do not have the functions <em>colMeans</em> and <em>rowMeans</em>… How can we calculate the mean of the rows and the columns in an R way? With apply!</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Ok, <em>but I want to do it in parallel</em>. Now here is the trick. In the moment you write your code with apply, transforming it to a parallel code comes by free (in terms of coding, parallelism has a communication overhead that makes it not viable for this kind of silly cases!).</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>If you need to have an environmental variable in the function code you must do the following:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>being varName the name of the variable you want to export.</p>
+<h3 id="wrap-up">Wrap up</h3>
+<p>Summary and some advise:</p>
+<ul>
+<li>We have seen how silly is to parallelize in a basic way our R codes for local machine, because we’re lazy to get to multiple computers (I should cover this some day).</li>
+<li>All kinds of standard apply functions are covered in this package (sapply, lapply, mapply…).</li>
+<li>This is quite useful when we are doing local experiments . When we can write the code as an apply, this comes in handy!</li>
+<li>Beware of your RAM usage. Sometimes R can be memory consuming and if you go for parallelism, models will be done in parallel, so they will need 4x RAM in the case you have 4 cores. If the RAM used is higher than your hardware’s maximum, you’ll be swapping data to disk and that could end in the OS freezing. So, what you win by parallelizing you lose it by swapping (and usually it performs even worse than monothread).</li>
+<li>There are other ways to execute code in parallel (RHadoop, R on Spark…), but I haven’t tried yet!</li>
+</ul>
+<p>I hope this post helps you a bit with the R stuff, even though its quite silly!</p>
+
+</article>
+
+
+
+</div>
+</div>
+
+
+</body>
+</html>
+

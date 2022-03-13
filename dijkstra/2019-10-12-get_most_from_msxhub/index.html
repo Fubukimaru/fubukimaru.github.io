@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+    <base href="http://www.gamerachan.org/fubu/dijkstra/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Fubu">
+
+<meta name="description" content="">
+
+<title>Get the most out of MSXHub</title>
+<meta name="generator" content="Hugo 0.92.2" />
+<link rel="stylesheet" href="css/pojoaque.min.css">
+<script src="js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<link  href="http://www.gamerachan.org/fubu/dijkstra//css/theme.min.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="http://www.gamerachan.org/fubu/dijkstra/img/favicon.png">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    
+    <h3 class="home-link">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/"> ⊳Root</a>
+        <a href="index.xml"> ⊳RSS</a> 
+    </h3>
+
+    
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/code/">code</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/hardware/">hardware</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/linux/">linux</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/misc/">misc</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/msx/">msx</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/music/">music</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Get the most out of MSXHub</h1>
+<h4>Published 2019-10-12 14:48:22</h4>
+<article>
+    <p>In this post I&rsquo;ll introduce MSXHub and how to use it in a very &ldquo;linuxy&rdquo; way just
+by organizing our packages a bit. You&rsquo;ll need an MSX with MSX-DOS (probably in a
+flashcart) along with a network card and your fingers.</p>
+<h1 id="introduction-to-msxhub">Introduction to MSXHub</h1>
+<p>MSXHub is a superb repository tool for our MSX Systems that allows us to
+download MSX software (tools, games&hellip;) directly from our MSX without needing a
+computer. We just need a UNAPI compatible network card and a flashcart to run
+the software over MSX-DOS.</p>
+<p>For more information about MSXHub, please check the project&rsquo;s
+<a href="https://msxhub.com/">website</a>. Cheers to fr3nd for his enormous work on this!</p>
+<h1 id="drawback">Drawback</h1>
+<p>At the moment MSXHub allows you to install software in a given folder that you
+may specify, but that program won&rsquo;t be accessible directly from MSX-DOS prompt
+from any folder, you have to do some trickery (don&rsquo;t worry, it&rsquo;s quite easy).</p>
+<h1 id="installing-software-with-msxhub">Installing software with MSXHub</h1>
+<p>In order to install software from MSXHub you just have to do the following:</p>
+<pre tabindex="0"><code>HUB INSTALL vi
+</code></pre><p>With this we install <code>vi</code> (also by fr3nd) on the root of our flashcart in a <code>vi</code>
+folder. We can also specify where to install it:</p>
+<pre tabindex="0"><code>HUB INSTALL vi B:¥pkg¥vi
+</code></pre><p>This will install the software on B:\pkg\vi (Notice that I have used ¥ instead
+of , this is because I own a japanese machine.).</p>
+<h1 id="organization">Organization</h1>
+<p>So, now I&rsquo;ll explain to you how I organize my software now for this task:</p>
+<ul>
+<li>B:\pkg: Contains all the software installed with MSXHub</li>
+<li>B:\bin: Contains all the software manually installed and without folders</li>
+<li>B:\bin\ln: Contains some magical .bat files that will be introduced later</li>
+</ul>
+<p>So, yeah, every time I install something I do it in the pkg folder to have it
+organised.</p>
+<h1 id="path">Path</h1>
+<p>There is an awesome MSX-DOS command named <code>path</code>. With it you can set different
+files for MSX-DOS to search for executables. If an executable is in any folder
+of the path (just like in linux and other systems), it will be accessible just
+by typing its name directly! No more &ldquo;I have to go to this folder, then execute,
+then to this other&hellip;&rdquo;.</p>
+<p>So, in your flashcart&rsquo;s <code>autoexec.bat</code> you could set the following:</p>
+<pre tabindex="0"><code>PATH A:¥;A:¥MM;A:¥BIN;B:¥BIN¥LN;B:¥BIN;
+</code></pre><p>With this MSX-DOS will be aware of all those folders and search for executables.
+<em>Mind that if you put B:\BIN before B:\BIN\LN you won&rsquo;t be seeing LN folder
+executables</em>. I don&rsquo;t know why is this but I assume that is a way to prevent to
+reload folders on path. If you have any clue about this, please tell me :).</p>
+<h1 id="bat-files">.BAT files</h1>
+<p>Ok, now we have <code>B:\BIN\LN</code> on our path, now we need to create &ldquo;links&rdquo;. I
+couldn&rsquo;t find a way to link on MSX-DOS so I made some dummy .BAT files to call
+applications. For example in the case of <code>B:\BIN\LN\VI.BAT</code>:</p>
+<pre tabindex="0"><code>B:¥PKG¥VI¥VI %1
+</code></pre><p>So we&rsquo;re calling the application with the full path inside and we use <code>%1</code> to
+refer to the first parameter that we pass to <code>VI.BAT</code>. If the application
+doesn&rsquo;t need one or it has more than one, you can use <code>%1 %2 %3...</code>.</p>
+<p>And&hellip; THAT&rsquo;S IT! <code>vi</code> is now accessible everywhere in your MSX computer. Enjoy!</p>
+<p>Thanks to fr3nd for his work  and Aorante for his support!</p>
+
+</article>
+
+
+
+</div>
+</div>
+
+
+</body>
+</html>
+

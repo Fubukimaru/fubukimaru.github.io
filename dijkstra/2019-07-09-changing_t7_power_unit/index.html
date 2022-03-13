@@ -1,0 +1,182 @@
+<!doctype html>
+<html>
+<head>
+    <base href="http://www.gamerachan.org/fubu/dijkstra/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Fubu">
+
+<meta name="description" content="">
+
+<title>Changing MSX HB-T7 Power Supply Unit</title>
+<meta name="generator" content="Hugo 0.92.2" />
+<link rel="stylesheet" href="css/pojoaque.min.css">
+<script src="js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<link  href="http://www.gamerachan.org/fubu/dijkstra//css/theme.min.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="http://www.gamerachan.org/fubu/dijkstra/img/favicon.png">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    
+    <h3 class="home-link">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/"> ⊳Root</a>
+        <a href="index.xml"> ⊳RSS</a> 
+    </h3>
+
+    
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/code/">code</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/hardware/">hardware</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/linux/">linux</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/misc/">misc</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/msx/">msx</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/music/">music</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Changing MSX HB-T7 Power Supply Unit</h1>
+<h4>Published 2019-07-09 08:03:18</h4>
+<article>
+    <p>Hellllooooo everyone!</p>
+<p>I&rsquo;m alive, again. Maki asked me to make a blog post about how we changed the MSX
+HitBit T7 japanese power supply unit (from now on PSU) for a more modern and european one. So, let&rsquo;s do
+this.</p>
+<h1 id="update-2020-05-29-victor-muñoz-tutorial">Update (2020-05-29): Victor Muñoz tutorial</h1>
+<p>Victor Muñoz followed this post (plus the discussion we have had on email) and
+did this mod. He has shared with me a PDF containing the tutorial he has made.
+So check this for additional notes and photos so it&rsquo;s clearer.</p>
+<p><a href="img/msxt7power/tuto_t7_victor_munoz.pdf">Click here to read it! (In Spanish)</a></p>
+<h1 id="bill-of-materials">Bill of materials</h1>
+<ul>
+<li>A power supply unit (PSU) (+12v, -12v and +5v) [In our case a Traco Power 60 TOP 60522, the one that
+gives us those voltages]</li>
+<li>A 3 pin and 6 pin molex connector. They are those that you can see connected
+to the power unit board.</li>
+<li>Cables. If my memory doesn&rsquo;t fail me, you won&rsquo;t be needing them as the already
+present ones can be reused. But have some cables at hand, just in case.</li>
+<li>Screws with nuts to hold the power unit board to the chassis.</li>
+<li>A lighter and something round and metalic to heat it&hellip; or a dremel to
+perforate the chassis for the screws.</li>
+<li>Soldering iron and solder metal (I don&rsquo;t remember the name in english right
+now)</li>
+<li>You may need a dremel or something to cut some metallic part so that the PSU
+fits</li>
+<li>Plugs to adapt your MSX cable</li>
+</ul>
+<h1 id="first-contact">First contact</h1>
+<p>First of all, when you open the MSX and remove the keyboard (god, that keyboard
+connector sux a lot) you&rsquo;ll see something like this:</p>
+<p><img src="http://www.gamerachan.org/fubu/dijkstra/img/msxt7power/overview.jpg" alt="Sony HB-T7 board overview"></p>
+<p>You may have noticed a couple of changes: You&rsquo;ll have a japanese PSU and you may
+have different batteries.</p>
+<p><img src="http://www.gamerachan.org/fubu/dijkstra/img/msxt7power/pilas.jpg" alt="Board batteries"></p>
+<p>Instead of two button batteries you should have one button battery and a barrel
+one, for the modem and the BIOS respectively (If I&rsquo;m not wrong!). REMOVE THE
+BARREL ONE ASAP. It may led your board to corrosion when it explodes. You can
+change it for another compatible rechargeable battery or use a diode to lower
+the voltage of a button one and cut the power in one-way so that the battery
+doesn&rsquo;t get to recharge (if you charge a non-rechargeable battery you may have
+problems :)). Thanks to <a href="http://retro-cpu.run">Ronivon Costa</a> for this diode trick!</p>
+<h1 id="operation-details-and-overview">Operation details and overview</h1>
+<p>This is our target:</p>
+<p><img src="http://www.gamerachan.org/fubu/dijkstra/img/msxt7power/placed_power.jpg" alt="Placed power supply"></p>
+<p>We need to do the following steps:</p>
+<pre tabindex="0"><code class="language-{mengler}" data-lang="{mengler}">1) Remove the old PSU (cut and desolder)
+2) Cut the wires from the old PSU to reuse them
+3) Calculate where to put the new PSU
+    + Do holes on the chassis so we can put the screws to hold the PSU there
+    + You may have to cut part of the metal below the old PSU
+    + You may also have to cut the plastic holders that held the old PSU so you
+      can fit the PSU
+4) Secure the new PSU in place
+5) Remove 3 components to solder our PSU cables directly to their output
+6) Build the PSU cables with the required length to reach everywhere
+    + Mind that the 6 pin one needs to be long, try to plan it well. These
+      cables should be in the place where the 3 removed components were
+7) Solder everything up
+</code></pre><p>Notice that I only have pictures of the MSX completed. I had pictures of the operation day
+but I&rsquo;m not able to find the.</p>
+<h1 id="the-psu">The PSU</h1>
+<p>First of all we have to check how to plug the things. If you bought the same PSU
+as I did, you have the manual <a href="https://www.mouser.es/datasheet/2/687/top60-519350.pdf">here</a>.</p>
+<p>So, from the last picture from left to right:</p>
+<ul>
+<li>Blue: 12v</li>
+<li>Red: -12v</li>
+<li>Black: Ground</li>
+<li>Blue: 5v</li>
+</ul>
+<p><img src="http://www.gamerachan.org/fubu/dijkstra/img/msxt7power/cable_detail_1_overview.jpg" alt="Cable overview"></p>
+<p>Yes, we could have used a different color for 5v, but that was what we had!</p>
+<h1 id="-12v-and-ground">-12v and ground</h1>
+<p>We soldered both the ground and -12v to component IC903 place. You could solder
+the ground in other places, but we thought that this one was practical.</p>
+<p><img src="http://www.gamerachan.org/fubu/dijkstra/img/msxt7power/cable_detail_3.jpg" alt="IC903 cables GND and -12v">
+<img src="http://www.gamerachan.org/fubu/dijkstra/img/msxt7power/cable_detail_3_zoom_IC903.jpg" alt="IC903 zoom"></p>
+<h1 id="12v">+12v</h1>
+<p>This is where you connect the 12v (blue cable):</p>
+<p><img src="http://www.gamerachan.org/fubu/dijkstra/img/msxt7power/cable_detail_4.jpg" alt="12v connection"></p>
+<h1 id="5v">+5v</h1>
+<p>This is where you connect the 5v:</p>
+<p><img src="http://www.gamerachan.org/fubu/dijkstra/img/msxt7power/cable_detail_5.jpg" alt="5v connection">
+<img src="http://www.gamerachan.org/fubu/dijkstra/img/msxt7power/cable_detail_5_blue_out.jpg" alt="5v connection"></p>
+<h1 id="power-input">Power input</h1>
+<p>Finally, the power input should be soldered like this:</p>
+<p><img src="http://www.gamerachan.org/fubu/dijkstra/img/msxt7power/cable_detail_6_enchufe.jpg" alt="Outside power input"></p>
+<p>Notice that it doesn&rsquo;t matter which pin is soldered to where as we&rsquo;re dealing
+with alternating current (AC).</p>
+<h1 id="screws">Screws</h1>
+<p>In my case, the screws were setted up as follows:</p>
+<p><img src="http://www.gamerachan.org/fubu/dijkstra/img/msxt7power/chasis_screws.jpg" alt="Screw it!"></p>
+<h1 id="final-touches">Final touches</h1>
+<p>Finally, you&rsquo;ll need to cut the power cable to adapt it to your regional plug!</p>
+<p><img src="http://www.gamerachan.org/fubu/dijkstra/img/msxt7power/enchufes.jpg" alt="plugs"></p>
+<p>And if you want it, you can use the japanese plug to create an adapter so you
+can use your MSX back plug as it now runs at your voltage.</p>
+<p><img src="http://www.gamerachan.org/fubu/dijkstra/img/msxt7power/infinite_power.jpg" alt="INFINITE POWER!"></p>
+<p>And it works!</p>
+<p><img src="http://www.gamerachan.org/fubu/dijkstra/img/msxt7power/maki_pakete.jpg" alt="It works :)"></p>
+<h1 id="optional-steps">Optional steps</h1>
+<p>You may want to remember when did you made the mod, with who you where and where
+was it, so write it down inside your MSX!</p>
+<p><img src="http://www.gamerachan.org/fubu/dijkstra/img/msxt7power/maki_punki.jpg" alt="Don&rsquo;t forget to sign it!"></p>
+<h1 id="closure">Closure</h1>
+<p>Thanks to <a href="http://www.thepetsmode.com/">JamQue</a> for his idea of using molex conectors instead of soldering stuff
+directly. Thanks to <a href="http://aamsx.com">Maki</a> for all his support and knowledge during all the
+operation :).</p>
+
+</article>
+
+
+
+</div>
+</div>
+
+
+</body>
+</html>
+

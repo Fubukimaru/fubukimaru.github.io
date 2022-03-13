@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+    <base href="http://www.gamerachan.org/fubu/dijkstra/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Fubu">
+
+<meta name="description" content="">
+
+<title>Testing dithering and color reduction</title>
+<meta name="generator" content="Hugo 0.92.2" />
+<link rel="stylesheet" href="css/pojoaque.min.css">
+<script src="js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<link  href="http://www.gamerachan.org/fubu/dijkstra//css/theme.min.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="http://www.gamerachan.org/fubu/dijkstra/img/favicon.png">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    
+    <h3 class="home-link">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/"> ⊳Root</a>
+        <a href="index.xml"> ⊳RSS</a> 
+    </h3>
+
+    
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/code/">code</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/hardware/">hardware</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/linux/">linux</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/misc/">misc</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/msx/">msx</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/music/">music</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Testing dithering and color reduction</h1>
+<h4>Published 2021-06-18 17:36:52</h4>
+<article>
+    <p>Hello!</p>
+<p>I&rsquo;m trying to convert images so that they are lighter. I got the idea from
+<a href="http://lowtechmagazine.com">Low-Tech Magazine</a> and got some help and
+information from a <a href="https://github.com/mvac7">good guy</a>.</p>
+<p>Using ImageMagick:</p>
+<pre tabindex="0"><code>convert input.jpg -set colorspace Gray -ordered-dither o8x8 -colors 2 output.gif
+</code></pre><p>From this image:</p>
+<p><img src="http://www.gamerachan.org/fubu/dijkstra/img/20210618_dither/original.jpg" alt="Original"></p>
+<p>We get this one:</p>
+<p><img src="http://www.gamerachan.org/fubu/dijkstra/img/20210618_dither/dithered.gif" alt="Grayscale + Dither + Color reduction"></p>
+<p>From 72KB to 16KB. Looks a lot like the gameboy camera actually. There are other
+dithering algorithms, but for this photo the ordered-dither gave the best
+picture.</p>
+<p>And now the new reduced image with a link to the &ldquo;HD&rdquo; one!</p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/img/20210618_dither/original.jpg"><img src="http://www.gamerachan.org/fubu/dijkstra/img/20210618_dither/dithered.gif" alt="pic_link"></a></p>
+
+</article>
+
+
+
+</div>
+</div>
+
+
+</body>
+</html>
+

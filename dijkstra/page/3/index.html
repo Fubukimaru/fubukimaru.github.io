@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+<head>
+    <base href="http://www.gamerachan.org/fubu/dijkstra/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Fubu">
+
+<meta name="description" content="">
+
+<title>El Fubu</title>
+<meta name="generator" content="Hugo 0.92.2" />
+<link rel="stylesheet" href="css/pojoaque.min.css">
+<script src="js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<link  href="http://www.gamerachan.org/fubu/dijkstra//css/theme.min.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="http://www.gamerachan.org/fubu/dijkstra/img/favicon.png">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    
+    <h3 class="home-link">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/"> ⊳Root</a>
+        <a href="index.xml"> ⊳RSS</a> 
+    </h3>
+
+    
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/code/">code</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/hardware/">hardware</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/linux/">linux</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/misc/">misc</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/msx/">msx</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/music/">music</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+
+<div class="articles-list">
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2018-04-08-connecting-to-modern-instant-messaging-services-with-an-msx/">Connecting to modern Instant Messaging services with an MSX</a> - 2018-04-08 20:11:15</h3>
+        Hello!
+It has been a while since the last post. Yes I’m alive.
+So, in this post I will introduce you to two marvelous concepts:
+ BitlBee IRC on an MSX with an TCP/IP UNAPI compatible network card.  Let’s begin…
+Introduction Why would you do that? I mean, there are more efficient ways to communicate with other people that require less effort, right?
+Well, here are my two cents for the first point, BitlBee.
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2017-10-04-the-slowest-satie/">The Slowest Satie</a> - 2017-10-04 09:24:56</h3>
+           
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2017-09-30-msx2-sony-hb-f5-scart-to-japanese21/">MSX2 Sony HB-F5: SCART to Japanese21</a> - 2017-09-30 18:10:15</h3>
+        We have adapted a standard European SCART cable to use it with an MSX2 HB-F5. You have to change the pins of one of the ends (the connector that will be on the MSX) as follows:
+**SCART – Japanese21
+** X means not connected.
+ 1 – X 2 – 6 3 – X 4 – 3 5 – 8 6 – 2 7 – 20 8 – X 9 – 7 10 – X 11 – 19 12 – X 13 – 13 14 – 14 15 – 15 16 – 16 17 – 17 18 – 18 19 – X 20 – 10  
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2017-07-05-msx-for/">Z80 For Loop</a> - 2017-07-05 08:10:27</h3>
+        WHILE – FOR:
+We usually use B as counter.
+LD C, 5 LD A, 0 LD B, 100 .NEXT2: push BC LD B, 10 .NEXT: ADD A, C DJNZ .NEXT pop BC DJNZ .NEXT2 
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2017-05-19-leaflet-on-jupyter/">Leaflet on Jupyter</a> - 2017-05-19 08:10:27</h3>
+        To do: Improve text. Give examples. Explain stuff, dude…!
+You need this package:
+https://github.com/ellisonbg/ipyleaflet
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2017-05-19-jupyter-customization-nbsextensions-and-themes/">Jupyter Customization: NBSExtensions and themes</a> - 2017-05-19 08:07:49</h3>
+        To do: Intro, write the article better.
+https://github.com/ipython-contrib/jupyter_contrib_nbextensions
+Installing nbsextensions:
+sudo pip install jupyter_contrib_nbextensions
+Color customization:
+Make file ~/.jupyter/custom/custom.css
+try: https://github.com/powerpak/jupyter-dark-theme
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2017-05-12-sparkr-gapply-mess/">SparkR gapply mess</a> - 2017-05-12 08:56:31</h3>
+        Hello,
+Do not assume anything. Never. Ever. Specially with SparkR (Apache Spark 2.1.0).
+When using the gapply function, maybe you want to return the key to mark the results in a function as follows:
+countRows &lt;- function(key, values) { df &lt;- data.frame(key=key, nvalues=nrow(values)) return(df) } count &lt;- gapplyCollect(data, &quot;keyAttribute&quot;, countRows) countRows &lt;- function(key, values) { df &lt;- data.frame(key=key, nvalues=nrow(values)) return(df) } count &lt;- gapplyCollect(data, &quot;keyAttribute&quot;, countRows) SURPRISE. You can&rsquo;t.
+You should get this error:
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2017-02-25-sony-hitbit-5575p-dead-vram-diagnosis/">Sony HitBit 55/75P dead VRAM diagnosis</a> - 2017-02-25 10:48:47</h3>
+        Hey!
+Recently I bought a broken 75P just for fun (and well, it was cheap :)). It had a video problem which, after reading a couple of msx.org posts (Hit-bit With Broken Graphics and 75P black screen mainly), I believed it was a problem of VRAM as Grauw pointed.
+That was a clever way to debug it. Watching how Basic characters are output, you can see which bit is broken in the ASCII chart.
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2017-02-01-multiple-x-sessions-on-the-same-computer/">Multiple X sessions on the same computer</a> - 2017-02-01 17:29:55</h3>
+        You can do as this tutorial says:
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2016-09-08-msx2cas/">MSX2Cas</a> - 2016-09-08 07:10:55</h3>
+        Very cool application for the phone. You can easily load .cas files on the phone and play them :).
+  
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2016-09-03-asmsx-bugfix-1-ifs-on-megarom/">asMSX bugfix 1: Ifs on .megarom</a> - 2016-09-03 12:49:45</h3>
+        Hello!
+Finally some improvements on asMSX. At the start of this project JamQue told me that he had issues using ifs when the “.megarom” clause is active. The issue correction can be seen here in Github.
+The problem was that when generating a byte (for example, an LD instruction) it checks if it is able to generate it if the condition established for this level allows it.
+Original:
+The first if will only affect the if(type!
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2016-08-23-tabla-dnb-jazz-and-jungle/">Tabla, DnB, Jazz and Jungle</a> - 2016-08-23 21:04:05</h3>
+        So, once again I tried to discover which genre of the song “Men of war”, which is part of the OST of Breath Of Fire IV (A quite nice PlayStation RPG :)).
+  I tried from tabla breaks to tabla dnb… couldn’t find it. Until now!
+I found this video with a bunch of dnb indian stuff. It misses the tabla but it’s nice!
+  Leaving the electro world, I found Amrat Hussain Trio:
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2016-08-20-learning-bison-and-flex-the-calculator/">Learning Bison and Flex: The calculator</a> - 2016-08-20 18:28:25</h3>
+        Hello everynyan,
+I’m learning how Bison and Flex work with an O’Reilly book and there can be found an example on how to build a calculator (which has an error on the code, probably there are more in the book, that’s why it has that kind of critics, but it works.).
+I ended up making an extension on it just to test my forgotten grammar skills. The code is the following:
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2016-08-20-understanding-asmsx-volume-2-lex-l/">Understanding asMSX Volume 2: lex.l</a> - 2016-08-19 23:27:42</h3>
+        Welcome back to the mystery machine!
+Today, the spooky lex.l. As we saw in the previous post this file is full with constants, but to be more precise this is the file where you tell how to treat every string found. In fact, constants are not defined in this file but in dura.y,
+For example:
+ “ld return MNEMO_LD”: Whenever you find a string that’s which characters ld, treat is as a token with value MNEMO_LD (Mnemotechnic for Load instruction).
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2016-08-18-rhythm-by-time/">Akiko Yano: Rhythm by time</a> - 2016-08-18 22:50:42</h3>
+        From ramen to salvation.
+    
+    </article>
+    
+</div>
+
+    <ul class="pagination pagination-default">
+      <li class="page-item">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/page/2/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/" aria-label="Page 1" class="page-link" role="button">1</a>
+      </li>
+      <li class="page-item">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 3" class="page-link" role="button">3</a>
+      </li>
+      <li class="page-item">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
+      </li>
+      <li class="page-item">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/page/4/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/page/4/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul>
+</div>
+</div>
+
+
+</body>
+</html>
+

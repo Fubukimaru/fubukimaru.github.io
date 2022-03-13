@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>El Fubu</title>
+    <link>http://www.gamerachan.org/fubu/dijkstra/</link>
+    <description>Recent content on El Fubu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-UK</language>
+    <lastBuildDate>Sun, 13 Mar 2022 07:37:39 +0100</lastBuildDate><atom:link href="http://www.gamerachan.org/fubu/dijkstra/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modifying a Sony Hitbit 10P to use a standard barrel jack power supply</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2022-03-13-hitbit10p/</link>
+      <pubDate>Sun, 13 Mar 2022 07:37:39 +0100</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2022-03-13-hitbit10p/</guid>
+      <description>Greetings everyone!
+A couple of weeks ago I got a Sony HitBit 10p from a mechanical keyboard enthusiast from the University, a great guy :). He know where to leave MSX things. There was a particular issue: There was no power supply. After changing one power supply for a Sony HB-T7 I thought that it would not be much of a problem. And actually it was not!
+
+I found a tutorial in spanish on how to do this with a phone charger.</description>
+    </item>
+    
+    <item>
+      <title>How to config your Vortex Tracker for the MSX computers family</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2021-08-22-vortex_tracker_msx/</link>
+      <pubDate>Sun, 22 Aug 2021 19:56:31 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2021-08-22-vortex_tracker_msx/</guid>
+      <description>Hello my friends!
+This is a reminder for me and for the future generations to come. I&amp;rsquo;m not going to show you anything very magical or new, but this happen to me and I didn&amp;rsquo;t have clue about it. So if you didn&amp;rsquo;t know, now you will!
+Are you tired of compsing something in Vortex Tracker and hearing something odd when playing it in the machine? Your tracker might be wrongly configured!</description>
+    </item>
+    
+    <item>
+      <title>Overloaded and unsatisfied when searching in Google</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2021-07-14-searching_in_google/</link>
+      <pubDate>Wed, 14 Jul 2021 04:58:05 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2021-07-14-searching_in_google/</guid>
+      <description>Welcome to the longest post to the date in this blog!
+Today we have something very random: Thoughts about searching in Google. At 5AM with Massive Attack! (Mezzanine is a great Album)
+Have you ever been in a position where you want to find a piece of daily life information like &amp;ldquo;How to be more spontaneous/escape routine&amp;rdquo; or &amp;ldquo;How to improve my sleep&amp;rdquo;? And boom! You get like a bazillion results.</description>
+    </item>
+    
+    <item>
+      <title>Testing dithering and color reduction</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2021-06-18-testing_dithering/</link>
+      <pubDate>Fri, 18 Jun 2021 17:36:52 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2021-06-18-testing_dithering/</guid>
+      <description>Hello!
+I&amp;rsquo;m trying to convert images so that they are lighter. I got the idea from Low-Tech Magazine and got some help and information from a good guy.
+Using ImageMagick:
+convert input.jpg -set colorspace Gray -ordered-dither o8x8 -colors 2 output.gif From this image:
+We get this one:
+From 72KB to 16KB. Looks a lot like the gameboy camera actually. There are other dithering algorithms, but for this photo the ordered-dither gave the best picture.</description>
+    </item>
+    
+    <item>
+      <title>Removing Javascript</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2021-06-15-removing_javascript/</link>
+      <pubDate>Tue, 15 Jun 2021 19:39:47 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2021-06-15-removing_javascript/</guid>
+      <description>Hello!
+Probably nobody cares, but I have removed the share section (twitter + facbeook) because it required to load 300kb for the icons plus random javascripts.
+We want this to be light.
+On the other hand I have removed the &amp;ldquo;last posts&amp;rdquo; from the index. This is because it needed to recompile ALL the posts everytime because this list is always updated. This way&amp;hellip; only the last post needs to be compiled!</description>
+    </item>
+    
+    <item>
+      <title>Pyspark and UDF types problem</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2020-11-02-pyspark_udf_types/</link>
+      <pubDate>Mon, 02 Nov 2020 12:20:05 +0100</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2020-11-02-pyspark_udf_types/</guid>
+      <description>Hello!
+Here is a fast note that might not be obvious. Beware with UDF types in PySpark.
+from pyspark.sql.functions import udf from pyspark.sql.types import IntegerType, FloatType def very_fun(idk): return(22) def floating_fun(idk): return(22.0) df = sqlContext.createDataFrame( [ (1, &#39;foo&#39;), (2, &#39;bar&#39;), ], [&#39;id&#39;, &#39;txt&#39;] ) funfun_int = udf(very_fun, IntegerType()) funfun_float = udf(very_fun, FloatType()) floatingfun_int = udf(floating_fun, IntegerType()) floatingfun_float = udf(floating_fun, FloatType()) df = df.withColumn(&#39;funfun_int&#39;, funfun_int(df[&#39;id&#39;])) df = df.withColumn(&#39;funfun_float&#39;, funfun_float(df[&#39;id&#39;])) df = df.</description>
+    </item>
+    
+    <item>
+      <title>Susumu Hirasawa - Darkness ⲡ duai &#43; Solid Air</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2020-09-04-susumu_hirasawa_darkness_duai_solid_air/</link>
+      <pubDate>Fri, 04 Sep 2020 11:59:44 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2020-09-04-susumu_hirasawa_darkness_duai_solid_air/</guid>
+      <description>Susumu Hirasawa appreciation post. Solid Air is part of P-Model works, but Susumu is able to mix it with Darkness ⲡ duai perfectly.
+Let&amp;rsquo;s rumble:
+  </description>
+    </item>
+    
+    <item>
+      <title>Castlevania: Order of Ecclesia - Tower of Dolls</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2020-08-10-tower_of_dolls/</link>
+      <pubDate>Mon, 10 Aug 2020 12:37:37 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2020-08-10-tower_of_dolls/</guid>
+      <description>I don&amp;rsquo;t only live from weird japanese things. Today, some castlevania.
+  </description>
+    </item>
+    
+    <item>
+      <title>Vocaloid (P-Model) - Bijutsukan de atta hito daro</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2020-05-22-p_model_miku_bijutsukan/</link>
+      <pubDate>Fri, 22 May 2020 10:55:37 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2020-05-22-p_model_miku_bijutsukan/</guid>
+      <description>I would have never expected a vocaloid cover of P-Model. But it does exist. And it&amp;rsquo;s amazing. I have to find the CD &amp;ldquo;Hatsune Miku Sings New Wave&amp;rdquo;.
+  Bonus track</description>
+    </item>
+    
+    <item>
+      <title>P-model - Spitirus</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2020-05-22-p_model_spitirus/</link>
+      <pubDate>Fri, 22 May 2020 08:52:37 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2020-05-22-p_model_spitirus/</guid>
+      <description>Oh Spiritus! Oh SPIiiiiiiiIIIIIIIIIiIiiiiiiiiiiiritussssssssssss!
+  </description>
+    </item>
+    
+    <item>
+      <title>Osamu Sato - Transmigration</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2020-03-06-osamu_sato_transmigration/</link>
+      <pubDate>Fri, 06 Mar 2020 11:58:37 +0100</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2020-03-06-osamu_sato_transmigration/</guid>
+      <description>Lately I have been only posting music. We&amp;rsquo;ll, that&amp;rsquo;s what I like to do at the moment, so&amp;hellip; ¯_(ツ)_/¯
+This time I bring you Osamu Sato&amp;rsquo;s Transmigration. It&amp;rsquo;s a weird album mixing pseudo-futuristic sound with strange folk chants. I haven&amp;rsquo;t played through all the Osamu Sato&amp;rsquo;s Tong-Nou, a superb weird experience into his mind made into a game, however the first song is clearly the opening theme.
+I hope you enjoy.</description>
+    </item>
+    
+    <item>
+      <title>Kiki Vivi Lily - 80denier</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2020-02-19-kiki_vivi_lily/</link>
+      <pubDate>Wed, 19 Feb 2020 11:28:10 +0100</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2020-02-19-kiki_vivi_lily/</guid>
+      <description>Lately this blog is only about music&amp;hellip; 🤔
+Today we have Kiki Vivi Lily. Yes the name is a bit weird, but her music is pretty good and full of a chill feeling.
+I hope you like it!
+  </description>
+    </item>
+    
+    <item>
+      <title>Denki Groove -  ピエール瀧の体操42歳</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2020-02-07-denkigroove/</link>
+      <pubDate>Fri, 07 Feb 2020 09:03:49 +0100</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2020-02-07-denkigroove/</guid>
+      <description>Today we have Denki Groove in the menu with their 42 year old Pierre gimnastics. Probably one of the most eccentric and well done videos that I have ever seen. Wait until the song gets dramatic :).
+Enjoy!
+  </description>
+    </item>
+    
+    <item>
+      <title>P-Model - Speed Tube</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2020-02-04-speedtube/</link>
+      <pubDate>Tue, 04 Feb 2020 09:46:02 +0100</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2020-02-04-speedtube/</guid>
+      <description>Oh sweet!
+  HIGHHH SPEEEEEEEEEEEEED TUUUUUUUUUUUUUUUUBE
+Yes, I&amp;rsquo;m very hooked.</description>
+    </item>
+    
+    <item>
+      <title>Naibu - Opium Lady</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2020-01-31-naibu/</link>
+      <pubDate>Fri, 31 Jan 2020 08:00:24 +0100</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2020-01-31-naibu/</guid>
+      <description>Good morning! Today I bring you a piece of very cool DnB with some touches of asian feeling.
+Please, enjoy Naibu:
+  </description>
+    </item>
+    
+    <item>
+      <title>Animals As Leaders - The Brain Dance</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2020-01-28-animalsasleaders/</link>
+      <pubDate>Tue, 28 Jan 2020 11:28:53 +0100</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2020-01-28-animalsasleaders/</guid>
+      <description>A colleague sent this piece to me today. It&amp;rsquo;s amazing how does it sound with just 3 guys, like with Mouse on the Keys. This is the kind of guitar playing that I like to hear :).
+  </description>
+    </item>
+    
+    <item>
+      <title>Mondo Grosso - Labyrinth</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2020-01-21-mondogroso/</link>
+      <pubDate>Tue, 21 Jan 2020 16:43:16 +0100</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2020-01-21-mondogroso/</guid>
+      <description>Today I came across this. Enjoy!
+  </description>
+    </item>
+    
+    <item>
+      <title>Mega Shinnosuke - 桃源郷とタクシー</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2019-12-12-mega_shinnosuke_taxi/</link>
+      <pubDate>Thu, 12 Dec 2019 09:43:48 +0100</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2019-12-12-mega_shinnosuke_taxi/</guid>
+      <description>Some nice youtube recomendation I got today:
+  </description>
+    </item>
+    
+    <item>
+      <title>Max cooper - Aleph 2</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2019-11-04-max_cooper_aleph2/</link>
+      <pubDate>Mon, 04 Nov 2019 17:07:48 +0100</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2019-11-04-max_cooper_aleph2/</guid>
+      <description>Music from the infinity with nice number rendering provided by Aorante. Check the description of the video. It is quite interesting :).
+  </description>
+    </item>
+    
+    <item>
+      <title>BAIXO&#39;s Bitlogic Mystery</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2019-10-31-baixo_bitlogic/</link>
+      <pubDate>Thu, 31 Oct 2019 10:34:48 +0100</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2019-10-31-baixo_bitlogic/</guid>
+      <description>So it seems that the truth is out about Bitlogic and the BAIXO Corporation.
+Let me share it with you all:
+  Beware with AI.</description>
+    </item>
+    
+    <item>
+      <title>パソコン音楽クラブ</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2019-10-30-pasocom_ongaku_kurabu/</link>
+      <pubDate>Wed, 30 Oct 2019 12:30:20 +0100</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2019-10-30-pasocom_ongaku_kurabu/</guid>
+      <description>Today: パソコン音楽クラブ (Pasocom Ongaku Club | Personal Computer music club) Found these guys because of a collaboration they did with YMCK (Family Circus, available on Spotify)
+I love both the sound and the video. So cool :D.
+So, here it is: パソコン音楽クラブ - Reiji no Machi
+  Enjoy!</description>
+    </item>
+    
+    <item>
+      <title>Get the most out of MSXHub</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2019-10-12-get_most_from_msxhub/</link>
+      <pubDate>Sat, 12 Oct 2019 14:48:22 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2019-10-12-get_most_from_msxhub/</guid>
+      <description>In this post I&amp;rsquo;ll introduce MSXHub and how to use it in a very &amp;ldquo;linuxy&amp;rdquo; way just by organizing our packages a bit. You&amp;rsquo;ll need an MSX with MSX-DOS (probably in a flashcart) along with a network card and your fingers.
+Introduction to MSXHub MSXHub is a superb repository tool for our MSX Systems that allows us to download MSX software (tools, games&amp;hellip;) directly from our MSX without needing a computer.</description>
+    </item>
+    
+    <item>
+      <title>Makoto - Uplifter</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2019-09-30-makoto/</link>
+      <pubDate>Mon, 30 Sep 2019 17:44:46 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2019-09-30-makoto/</guid>
+      <description>Some cool breaks for you
+  </description>
+    </item>
+    
+    <item>
+      <title>Multiline support in weechat</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2019-09-03-proper_multiline_weechat/</link>
+      <pubDate>Tue, 03 Sep 2019 16:00:52 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2019-09-03-proper_multiline_weechat/</guid>
+      <description>By default weechat doesn&amp;rsquo;t support multiline messages, but you can have that using the multiline.pl. In order to install it just run weechat and write /script. There you&amp;rsquo;ll see a lot of nice scripts to customize weechat. Write multiline and press return to filter the plugins by that keyword. Then just select it if it&amp;rsquo;s not selected already and then write i then return. Then you&amp;rsquo;ll have multiline enabled :).</description>
+    </item>
+    
+    <item>
+      <title>Raspbian 9 and librtlsdr-dev package</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2019-08-19-raspbian_9_and_librtlsdr-dev_package/</link>
+      <pubDate>Mon, 19 Aug 2019 13:12:15 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2019-08-19-raspbian_9_and_librtlsdr-dev_package/</guid>
+      <description>I tried to install librtlsdr-dev package and for some reasons I got a nasty error:
+&amp;gt; sudo apt-get install librtlsdr-dev ... The following packages have unmet dependencies: librtlsdr-dev : Depends: libusb-1.0-0-dev but it is not installable I noticed that there was no lib-usb-1.0-0-dev package, so the repository is inconsistent. So what I did was to install the package from Debian Stretch that can be downloaded from here.
+You can install it as follows:</description>
+    </item>
+    
+    <item>
+      <title>Lo-Fi Zelda</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2019-08-19-zelda_in_a_lo-fi_remix/</link>
+      <pubDate>Mon, 19 Aug 2019 07:57:40 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2019-08-19-zelda_in_a_lo-fi_remix/</guid>
+      <description>It&amp;rsquo;s cool to see how fitting is this song with the Lo-Fi/Vaporwavish style.
+  </description>
+    </item>
+    
+    <item>
+      <title>Boards of Canada - Sunshine Recorder</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2019-07-31-sunshinerecorder/</link>
+      <pubDate>Wed, 31 Jul 2019 11:00:06 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2019-07-31-sunshinerecorder/</guid>
+      <description>Probably one of my favourites amongst Boards of Canada sounds. It fits perfect with Hard-Boiled Wonderland and the End of the World, a novel by Haruki Murakami. The ambient fits perfectly with the setting described in the book, most of it quite unsettling, yet really enjoyable.
+  </description>
+    </item>
+    
+    <item>
+      <title>MIDIval PunditZ</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2019-07-26-midivalpunditz/</link>
+      <pubDate>Fri, 26 Jul 2019 11:52:28 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2019-07-26-midivalpunditz/</guid>
+      <description>Reviewing the Deep Asian Breaks video I went to do some searching on the authors of the tracks&amp;hellip; and I found this nice piece of music:
+  I hope you enjoy it :)</description>
+    </item>
+    
+    <item>
+      <title>Changing MSX HB-T7 Power Supply Unit</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2019-07-09-changing_t7_power_unit/</link>
+      <pubDate>Tue, 09 Jul 2019 08:03:18 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2019-07-09-changing_t7_power_unit/</guid>
+      <description>Hellllooooo everyone!
+I&amp;rsquo;m alive, again. Maki asked me to make a blog post about how we changed the MSX HitBit T7 japanese power supply unit (from now on PSU) for a more modern and european one. So, let&amp;rsquo;s do this.
+Update (2020-05-29): Victor Muñoz tutorial Victor Muñoz followed this post (plus the discussion we have had on email) and did this mod. He has shared with me a PDF containing the tutorial he has made.</description>
+    </item>
+    
+    <item>
+      <title>CLI Recommendations</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2018-05-11-cli-recommendations/</link>
+      <pubDate>Fri, 11 May 2018 20:51:09 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2018-05-11-cli-recommendations/</guid>
+      <description>Lately I have been using a lot CLI (Command Line Interface) applications for everything, mainly because they enhance the just keyboard user expirence along with a great functionallity with a low resource footprint. Yes, it may be harder to use them and harder to configure, but I think the outcome is satisfiying.
+I will introduce a bit the applications and where to start without much detail, because there&amp;rsquo;s a lot of documentation already available :).</description>
+    </item>
+    
+    <item>
+      <title>Connecting to modern Instant Messaging services with an MSX</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2018-04-08-connecting-to-modern-instant-messaging-services-with-an-msx/</link>
+      <pubDate>Sun, 08 Apr 2018 20:11:15 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2018-04-08-connecting-to-modern-instant-messaging-services-with-an-msx/</guid>
+      <description>Hello!
+It has been a while since the last post. Yes I’m alive.
+So, in this post I will introduce you to two marvelous concepts:
+ BitlBee IRC on an MSX with an TCP/IP UNAPI compatible network card.  Let’s begin…
+Introduction Why would you do that? I mean, there are more efficient ways to communicate with other people that require less effort, right?
+Well, here are my two cents for the first point, BitlBee.</description>
+    </item>
+    
+    <item>
+      <title>The Slowest Satie</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2017-10-04-the-slowest-satie/</link>
+      <pubDate>Wed, 04 Oct 2017 09:24:56 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2017-10-04-the-slowest-satie/</guid>
+      <description>   </description>
+    </item>
+    
+    <item>
+      <title>MSX2 Sony HB-F5: SCART to Japanese21</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2017-09-30-msx2-sony-hb-f5-scart-to-japanese21/</link>
+      <pubDate>Sat, 30 Sep 2017 18:10:15 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2017-09-30-msx2-sony-hb-f5-scart-to-japanese21/</guid>
+      <description>We have adapted a standard European SCART cable to use it with an MSX2 HB-F5. You have to change the pins of one of the ends (the connector that will be on the MSX) as follows:
+**SCART – Japanese21
+** X means not connected.
+ 1 – X 2 – 6 3 – X 4 – 3 5 – 8 6 – 2 7 – 20 8 – X 9 – 7 10 – X 11 – 19 12 – X 13 – 13 14 – 14 15 – 15 16 – 16 17 – 17 18 – 18 19 – X 20 – 10  </description>
+    </item>
+    
+    <item>
+      <title>Z80 For Loop</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2017-07-05-msx-for/</link>
+      <pubDate>Wed, 05 Jul 2017 08:10:27 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2017-07-05-msx-for/</guid>
+      <description>WHILE – FOR:
+We usually use B as counter.
+LD C, 5 LD A, 0 LD B, 100 .NEXT2: push BC LD B, 10 .NEXT: ADD A, C DJNZ .NEXT pop BC DJNZ .NEXT2 </description>
+    </item>
+    
+    <item>
+      <title>Leaflet on Jupyter</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2017-05-19-leaflet-on-jupyter/</link>
+      <pubDate>Fri, 19 May 2017 08:10:27 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2017-05-19-leaflet-on-jupyter/</guid>
+      <description>To do: Improve text. Give examples. Explain stuff, dude…!
+You need this package:
+https://github.com/ellisonbg/ipyleaflet</description>
+    </item>
+    
+    <item>
+      <title>Jupyter Customization: NBSExtensions and themes</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2017-05-19-jupyter-customization-nbsextensions-and-themes/</link>
+      <pubDate>Fri, 19 May 2017 08:07:49 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2017-05-19-jupyter-customization-nbsextensions-and-themes/</guid>
+      <description>To do: Intro, write the article better.
+https://github.com/ipython-contrib/jupyter_contrib_nbextensions
+Installing nbsextensions:
+sudo pip install jupyter_contrib_nbextensions
+Color customization:
+Make file ~/.jupyter/custom/custom.css
+try: https://github.com/powerpak/jupyter-dark-theme</description>
+    </item>
+    
+    <item>
+      <title>SparkR gapply mess</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2017-05-12-sparkr-gapply-mess/</link>
+      <pubDate>Fri, 12 May 2017 08:56:31 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2017-05-12-sparkr-gapply-mess/</guid>
+      <description>Hello,
+Do not assume anything. Never. Ever. Specially with SparkR (Apache Spark 2.1.0).
+When using the gapply function, maybe you want to return the key to mark the results in a function as follows:
+countRows &amp;lt;- function(key, values) { df &amp;lt;- data.frame(key=key, nvalues=nrow(values)) return(df) } count &amp;lt;- gapplyCollect(data, &amp;quot;keyAttribute&amp;quot;, countRows) countRows &amp;lt;- function(key, values) { df &amp;lt;- data.frame(key=key, nvalues=nrow(values)) return(df) } count &amp;lt;- gapplyCollect(data, &amp;quot;keyAttribute&amp;quot;, countRows) SURPRISE. You can&amp;rsquo;t.
+You should get this error:</description>
+    </item>
+    
+    <item>
+      <title>Sony HitBit 55/75P dead VRAM diagnosis</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2017-02-25-sony-hitbit-5575p-dead-vram-diagnosis/</link>
+      <pubDate>Sat, 25 Feb 2017 10:48:47 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2017-02-25-sony-hitbit-5575p-dead-vram-diagnosis/</guid>
+      <description>Hey!
+Recently I bought a broken 75P just for fun (and well, it was cheap :)). It had a video problem which, after reading a couple of msx.org posts (Hit-bit With Broken Graphics and 75P black screen mainly), I believed it was a problem of VRAM as Grauw pointed.
+That was a clever way to debug it. Watching how Basic characters are output, you can see which bit is broken in the ASCII chart.</description>
+    </item>
+    
+    <item>
+      <title>Multiple X sessions on the same computer</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2017-02-01-multiple-x-sessions-on-the-same-computer/</link>
+      <pubDate>Wed, 01 Feb 2017 17:29:55 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2017-02-01-multiple-x-sessions-on-the-same-computer/</guid>
+      <description>You can do as this tutorial says:</description>
+    </item>
+    
+    <item>
+      <title>MSX2Cas</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2016-09-08-msx2cas/</link>
+      <pubDate>Thu, 08 Sep 2016 07:10:55 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2016-09-08-msx2cas/</guid>
+      <description>Very cool application for the phone. You can easily load .cas files on the phone and play them :).
+  </description>
+    </item>
+    
+    <item>
+      <title>asMSX bugfix 1: Ifs on .megarom</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2016-09-03-asmsx-bugfix-1-ifs-on-megarom/</link>
+      <pubDate>Sat, 03 Sep 2016 12:49:45 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2016-09-03-asmsx-bugfix-1-ifs-on-megarom/</guid>
+      <description>Hello!
+Finally some improvements on asMSX. At the start of this project JamQue told me that he had issues using ifs when the “.megarom” clause is active. The issue correction can be seen here in Github.
+The problem was that when generating a byte (for example, an LD instruction) it checks if it is able to generate it if the condition established for this level allows it.
+Original:
+The first if will only affect the if(type!</description>
+    </item>
+    
+    <item>
+      <title>Tabla, DnB, Jazz and Jungle</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2016-08-23-tabla-dnb-jazz-and-jungle/</link>
+      <pubDate>Tue, 23 Aug 2016 21:04:05 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2016-08-23-tabla-dnb-jazz-and-jungle/</guid>
+      <description>So, once again I tried to discover which genre of the song “Men of war”, which is part of the OST of Breath Of Fire IV (A quite nice PlayStation RPG :)).
+  I tried from tabla breaks to tabla dnb… couldn’t find it. Until now!
+I found this video with a bunch of dnb indian stuff. It misses the tabla but it’s nice!
+  Leaving the electro world, I found Amrat Hussain Trio:</description>
+    </item>
+    
+    <item>
+      <title>Learning Bison and Flex: The calculator</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2016-08-20-learning-bison-and-flex-the-calculator/</link>
+      <pubDate>Sat, 20 Aug 2016 18:28:25 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2016-08-20-learning-bison-and-flex-the-calculator/</guid>
+      <description>Hello everynyan,
+I’m learning how Bison and Flex work with an O’Reilly book and there can be found an example on how to build a calculator (which has an error on the code, probably there are more in the book, that’s why it has that kind of critics, but it works.).
+I ended up making an extension on it just to test my forgotten grammar skills. The code is the following:</description>
+    </item>
+    
+    <item>
+      <title>Understanding asMSX Volume 2: lex.l</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2016-08-20-understanding-asmsx-volume-2-lex-l/</link>
+      <pubDate>Fri, 19 Aug 2016 23:27:42 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2016-08-20-understanding-asmsx-volume-2-lex-l/</guid>
+      <description>Welcome back to the mystery machine!
+Today, the spooky lex.l. As we saw in the previous post this file is full with constants, but to be more precise this is the file where you tell how to treat every string found. In fact, constants are not defined in this file but in dura.y,
+For example:
+ “ld return MNEMO_LD”: Whenever you find a string that’s which characters ld, treat is as a token with value MNEMO_LD (Mnemotechnic for Load instruction).</description>
+    </item>
+    
+    <item>
+      <title>Akiko Yano: Rhythm by time</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2016-08-18-rhythm-by-time/</link>
+      <pubDate>Thu, 18 Aug 2016 22:50:42 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2016-08-18-rhythm-by-time/</guid>
+      <description>From ramen to salvation.
+    </description>
+    </item>
+    
+    <item>
+      <title>Understanding asMSX Volume 1: Understanding the structure of the code</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2016-08-17-understanding-asmsx-volume-1-understanding-the-structure-of-the-code/</link>
+      <pubDate>Tue, 16 Aug 2016 23:00:08 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2016-08-17-understanding-asmsx-volume-1-understanding-the-structure-of-the-code/</guid>
+      <description>Hello!
+Welcome to another trip into another dark cave. Today we meet asMSX, an assembler for MSX’s Z80 made by Pitpan and bought and released with GPL license by cjv99 (Thanks!).
+Motivation
+It’s known that this assembler has some bugs, e.g. skipping IFDEFs when using MegaROM so there is an interest on knowing the internals of the code in order to fix this kind of bugs. My goal is not directly fixing bugs of this code but to provide more information about the code so all the people from the community may get themselves the code and fix it if there are any new bugs.</description>
+    </item>
+    
+    <item>
+      <title>On R and parallelism</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2016-03-24-on-r-and-parallelism/</link>
+      <pubDate>Thu, 24 Mar 2016 01:20:01 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2016-03-24-on-r-and-parallelism/</guid>
+      <description>R, that language that is has gained its momentum due to the people discovering the need of analyzing data. There are other several alternatives but this is my poison (or poisson!) of choice. In this post we will try to cover how to parallelize your R code with the package parallel.
+ Why bother? One of my main concerns when I was starting with R is that “WOW! Everything runs in one thread!</description>
+    </item>
+    
+    <item>
+      <title>New horizon</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2016-03-24-new-horizon/</link>
+      <pubDate>Wed, 23 Mar 2016 23:37:28 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2016-03-24-new-horizon/</guid>
+      <description>Well…
+Hello. What is expected of the first post of a blog? Well, actually it’s not the first post as this blog was created by $ADMIN for me to put my webcomic on it and I had 3 posts with test for automatic music play in loop (vital for my comics). But I was lazy. Very lazy.
+¯_(ツ)_/¯
+Whatever. Welcome to the captain’s log on the spaceship to amazing knowledge and Nutella.</description>
+    </item>
+    
+  </channel>
+</rss>

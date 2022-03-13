@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+<head>
+    <base href="http://www.gamerachan.org/fubu/dijkstra/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Fubu">
+
+<meta name="description" content="">
+
+<title>Connecting to modern Instant Messaging services with an MSX</title>
+<meta name="generator" content="Hugo 0.92.2" />
+<link rel="stylesheet" href="css/pojoaque.min.css">
+<script src="js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<link  href="http://www.gamerachan.org/fubu/dijkstra//css/theme.min.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="http://www.gamerachan.org/fubu/dijkstra/img/favicon.png">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    
+    <h3 class="home-link">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/"> ⊳Root</a>
+        <a href="index.xml"> ⊳RSS</a> 
+    </h3>
+
+    
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/code/">code</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/hardware/">hardware</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/linux/">linux</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/misc/">misc</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/msx/">msx</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/music/">music</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Connecting to modern Instant Messaging services with an MSX</h1>
+<h4>Published 2018-04-08 20:11:15</h4>
+<article>
+    <p>Hello!</p>
+<p>It has been a while since the last post. Yes I’m alive.</p>
+<p>So, in this post I will introduce you to two marvelous concepts:</p>
+<ul>
+<li>BitlBee</li>
+<li>IRC on an MSX with an <a href="https://www.konamiman.com/msx/msx-e.html#tcpipunapi">TCP/IP UNAPI</a> compatible network card.</li>
+</ul>
+<p>Let’s begin…</p>
+<h2 id="introduction">Introduction</h2>
+<p>Why would you do that? I mean, there are more efficient ways to communicate with other people that require less effort, right?</p>
+<p>Well, here are my two cents for the first point, BitlBee. BitlBee is a service that acts as a gateway for several instant messaging services, e.g. Facebook Messenger, Google Hangouts or Slack. Ok, but… a gateway to what? IRC, of course.</p>
+<p>Having only one application for communication is a pleasure that we can still have in this multi-protocol warfare that is the modern world. In this way, you can have all your friends, work-mates and family in the same point. Moreover, using IRC has low footprint on the resources, so it’s a win-win.</p>
+<p>Of course there are also downsides: you cannot use emojis, stickers or whatever. Also some protocol functions are not well covered, but it’s open source… so you can fix that ;).</p>
+<h2 id="requirements">Requirements</h2>
+<p>If you’re setting up a BitlBee server you will need:</p>
+<ul>
+<li>A computer with Linux. My personal choice for this task is a Raspberry Pi Zero.</li>
+<li>A bit of knowledge on Linux (or proficiency on the art of cognitive copy&amp;paste).</li>
+<li>Some patience learning for about BitlBee</li>
+</ul>
+<p>As for the MSX:</p>
+<ul>
+<li>An MSX… duh! (My recommendation is to have an MSX that can handle 80 collumns)</li>
+<li>An Ethernet UNAPI compatible network card if you’re using the same IRC client as I do (you could use other clients like SymbOS IRC client).</li>
+<li>The IRC client itself</li>
+</ul>
+<h2 id="bitlbee">BitlBee</h2>
+<p>As mentioned before, BitlBee is a piece of software that enables us to redirect all our messages from different IM services to IRC. There are two ways to approach using BitlBee: using our own server or using an already existing one.</p>
+<h3 id="using-an-already-existing-server">Using an already existing server</h3>
+<p>We can use a friend’s server or use <a href="https://www.bitlbee.org/main.php/servers.html">BitlBee public servers</a>. Notice that public servers can be regarded as an issue in security as we’re giving our passwords to them, but in most of the services you can stablish application passwords that can be revoked anytime.</p>
+<h3 id="i-wanna-have-my-own-server">I wanna have my own server</h3>
+<p>Ok, you went “the hard way”. Actually it is not that hard. There is a really quick introduction in <a href="http://quark.humbug.org.au/publications/internet/bitlbee.pdf">this link</a>. This guide provides a comprehensive stepwise tutorial on how to use this platform and how to install it. Most of the times it will probably end up as:</p>
+<pre><code>    sudo apt install bitlbee
+
+    OR
+
+    sudo pacman -S bitlbee
+</code></pre>
+<p><a href="https://wiki.archlinux.org/hindex.php/bitlbee">For Archlinux in particular there are some tips on the basics and adding protocols</a>.</p>
+<p>WARNING: by default BitlBee uses their own implementation of the protocols (which is actually very good!) but you may want to cover a protocol that they don’t support, like Telegram. In that case, if LibPurple covers it, you can use bitlbee compiled with LibPurple support.</p>
+<pre><code>    sudo apt install bitlbee-libpurple 
+
+    OR
+
+    pacaur -S bitlbee-libpurple
+
+    OR
+
+    yaourt -S bitlbee-libpurple 
+    (Or whatever AUR package manager you use)
+</code></pre>
+<h2 id="i-have-a-server-now-what">I have a server, now what?</h2>
+<p>OK, so now you have to follow <a href="http://quark.humbug.org.au/publications/internet/bitlbee.pdf">the guide</a>. Rewriting stuff that is already clear is not needed :).</p>
+<p>In this service what you do is to register an user, like you would do in IRC, and from that point add the accounts. There are several options for each account in BitlBee, so I encourage you to go through their <a href="https://wiki.bitlbee.org/">wiki</a>.</p>
+<p>I recommend you to test it with a PC client like pidgin, weechat or whatever IRC client you want.</p>
+<p>WARNING: If you want to use telegram with a low-powered device it may fail to create the keys for secure messaging. What I did was to create them with my laptop and then copying all the configuration to the Raspberry Pi zero.</p>
+<p>WARNING2: If you use a text-mode IRC like me on the MSX you may suffer with the disconnect and connect of other users, so you may want to set show_users option to “”, so the &amp;bitlbee control channel doesn’t show you any user and, hence, doesn’t interrupt your chatting with garbage. Check this <a href="https://wiki.bitlbee.org/ManagingContactList">link</a> for further information.</p>
+<h2 id="account-configured-let8217s-rock-on-that-msx">Account configured, let’s rock on that MSX</h2>
+<p>OK. So now you’re here in front of your MSX. If you already have your IRC client working, just connect with your client and you’re done.</p>
+<p>Here we’re using <a href="https://www.msx.org/downloads/irc-client-msx">Ptero’s MSXIRC.com</a> which is an IRC client for the MSX which has nice features. If we have already loaded our TCP/IP UNAPI stuff, we can already run the client. Mind that this client requieres of some configuration. Along the .COM we can find a .INI file which looks like this:</p>
+<pre><code>server whatever.irc.com
+port 6667
+srvpass # server password if requiered
+nick fubu
+altnick fubu2
+user MSXMan www.msx.ru msx.forever.ru :MSX DOS # Additional info
+font msxirc.fnt # It does incorporate a custom font.
+ink_c 2     # Text color
+paper_c 1   # Background color
+aink_c 1
+apaper_c 13
+timestamp 1
+
+;
+</code></pre>
+<p>Just modify it with your details (mostly the nick, server and so on…).</p>
+<p>We’re ready. We execute MSXIRC.COM and we will see the following screen:</p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/wp-content/uploads/2018/04/IMG_20180408_201149.jpg"><!-- raw HTML omitted --></a></p>
+<p>We have to press S and then F2 to connect.</p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/wp-content/uploads/2018/04/IMG_20180408_201221.jpg"><!-- raw HTML omitted --></a></p>
+<p>OK, we’re online. We have just to identify ourselves (/msg nickserv identify password) and… that’s it!</p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/wp-content/uploads/2018/04/IMG_20180408_201400.jpg"><!-- raw HTML omitted --></a></p>
+<p>Feel free to ask me questions. If they are interesting for this post, I will add them :).</p>
+<p>Enjoy!</p>
+<h2 id="references-the-links-on-the-post">References (The links on the post)</h2>
+<ul>
+<li><a href="https://www.konamiman.com/msx/msx-e.html#tcpipunapi">https://www.konamiman.com/msx/msx-e.html#tcpipunapi</a></li>
+<li><a href="https://www.bitlbee.org/main.php/servers.html">https://www.bitlbee.org/main.php/servers.html</a></li>
+<li><a href="http://quark.humbug.org.au/publications/internet/bitlbee.pdf">http://quark.humbug.org.au/publications/internet/bitlbee.pdf</a></li>
+<li><a href="https://wiki.archlinux.org/hindex.php/bitlbee">https://wiki.archlinux.org/index.php/bitlbee</a></li>
+<li><a href="https://wiki.bitlbee.org/">https://wiki.bitlbee.org/</a></li>
+<li><a href="https://wiki.bitlbee.org/ManagingContactList">https://wiki.bitlbee.org/ManagingContactList</a></li>
+<li><a href="https://www.msx.org/downloads/irc-client-msx">https://www.msx.org/downloads/irc-client-msx</a></li>
+</ul>
+
+</article>
+
+
+
+</div>
+</div>
+
+
+</body>
+</html>
+

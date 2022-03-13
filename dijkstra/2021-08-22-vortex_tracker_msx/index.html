@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+    <base href="http://www.gamerachan.org/fubu/dijkstra/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Fubu">
+
+<meta name="description" content="">
+
+<title>How to config your Vortex Tracker for the MSX computers family</title>
+<meta name="generator" content="Hugo 0.92.2" />
+<link rel="stylesheet" href="css/pojoaque.min.css">
+<script src="js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<link  href="http://www.gamerachan.org/fubu/dijkstra//css/theme.min.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="http://www.gamerachan.org/fubu/dijkstra/img/favicon.png">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    
+    <h3 class="home-link">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/"> ⊳Root</a>
+        <a href="index.xml"> ⊳RSS</a> 
+    </h3>
+
+    
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/code/">code</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/hardware/">hardware</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/linux/">linux</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/misc/">misc</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/msx/">msx</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/music/">music</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>How to config your Vortex Tracker for the MSX computers family</h1>
+<h4>Published 2021-08-22 19:56:31</h4>
+<article>
+    <p>Hello my friends!</p>
+<p>This is a reminder for me and for the future generations to come. I&rsquo;m not going
+to show you anything very magical or new, but this happen to me and I didn&rsquo;t
+have clue about it. So if you didn&rsquo;t know, now you will!</p>
+<p>Are you tired of compsing something in <a href="https://bulba.untergrund.net/vortex_e.htm">Vortex
+Tracker</a> and hearing something odd
+when playing it in the machine? Your tracker might be wrongly configured!</p>
+<p>By default Vortex Tracker is
+configured for the AY installed in the Pentagon 128K, which means that the chip
+frequency is set to <strong>1.75Mhz</strong> and the interrupt frequency of the machine is set
+to <strong>50Hz</strong>. In the case of the MSX the correct chip frequency is close to the
+found in the <strong>ZX Spectrum</strong> (Wooohoooo!), so we can set <strong>1.7734Mhz</strong>. If you&rsquo;re
+doing music for PAL machines, you&rsquo;re done. If you&rsquo;re targeting systems that work
+with <strong>60Hz</strong> (NTSC machines or MSX2 or superior PAL machines in <strong>60Hz</strong> mode), you
+should change the interrupt frequency to <strong>60Hz</strong> (Atari ST, in the options 🤷).</p>
+<p>To do so just go to File, Options and then Chip emulation.</p>
+<p>And that should be it!</p>
+<p>I hope you do a lot of random stuff in Vortex and share with us all!</p>
+<h1 id="edit-corrections-to-the-previous-text">Edit: Corrections to the previous text</h1>
+<p>I previously claimed, now fixed, that the MSX AY Chip was runing at the same
+frequency as the Spectrum was. However this was not entirely true and I have
+corrected that.</p>
+<p>Our mystical and wise friend <a href="https://github.com/mvac7"><em>mvac7</em></a> has done further research and here I
+present his conclusions:</p>
+<p>In <a href="https://www.msx.org/forum/msx-talk/development/ay-3-8910-frequency-question">[1]</a>
+a user claims the following:</p>
+<blockquote>
+<blockquote>
+<p>The multiplier is 32, because the GI chip is rated to 2Mhz maximum (it
+can&rsquo;t be clocked at 3.579545mhz) so in the MSX design it receives
+1.7897725Mhz (3.579545Mhz divided by 2).</p>
+</blockquote>
+</blockquote>
+<p>Therefore the correct frequency to be set is <strong>1.7897725</strong> (<em>1.7897727272727272929131459022755734622478485107421875</em> if you&rsquo;re very picky), as can be also seen
+in <a href="http://map.grauw.nl/resources/sound/generalinstrument_ay-3-8910.pdf">[2]</a>.</p>
+<p>In the Omega MSX we have a flip-flop <em>74HCT74D</em> which acts as a divider of the
+clock frequency, confirming the previously mentioned sources
+<a href="https://github.com/skiselev/omega/blob/master/Mainboard/KiCad/Omega-Mainboard-Schematic-1.2.pdf">[3]</a>.</p>
+<p>Moreover, in the service manual of the Panasonic CF2700 (Page 7)[<a href="https://hansotten.file-hunter.com/uploads/files/panasoniccf2700sm.pdf">4</a>] we can see the following
+figure:</p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/img/20210822_vortex/clk.png"><img src="http://www.gamerachan.org/fubu/dijkstra/img/20210822_vortex/clk_dither.png" alt="Panasonic CF2700 Clock"></a></p>
+<p>Here we see that this machine has a clock that oscillates at <strong>10.6781522 Mhz</strong>
+and this is divided by 3 to obtain the Z80 clock and then by 2 (or by 6 from the
+original clock) to obtain the PSG clock. In this particular case the final
+frequency is <strong>1.779462 Mhz</strong> far closer to the Spectrum than with the other
+value. So, in the end with the spectrum frequency you should be good. We may not
+be able to hear the difference directly from <strong>1.779 Mhz</strong> to <strong>1.790 Mhz</strong>. Or
+maybe we can say that that is the voice of your MSX, unique. Way more poetical,
+right?</p>
+<p>It is true that we can manually set the values of the frequency in vortex, but
+it appears that it is not working as after saving the changes you get back to
+the previous configuration used. But you may want to double check that!</p>
+<p>So, in summary, <strong>using the Spectrum frequency is fine</strong>.</p>
+<ul>
+<li>[1] <a href="https://www.msx.org/forum/msx-talk/development/ay-3-8910-frequency-question">https://www.msx.org/forum/msx-talk/development/ay-3-8910-frequency-question</a></li>
+<li>[2] <a href="http://map.grauw.nl/resources/sound/generalinstrument_ay-3-8910.pdf">http://map.grauw.nl/resources/sound/generalinstrument_ay-3-8910.pdf</a></li>
+<li>[3] <a href="https://github.com/skiselev/omega/blob/master/Mainboard/KiCad/Omega-Mainboard-Schematic-1.2.pdf">https://github.com/skiselev/omega/blob/master/Mainboard/KiCad/Omega-Mainboard-Schematic-1.2.pdf</a></li>
+<li>[4] <a href="https://hansotten.file-hunter.com/uploads/files/panasoniccf2700sm.pdf">https://hansotten.file-hunter.com/uploads/files/panasoniccf2700sm.pdf</a></li>
+</ul>
+
+</article>
+
+
+
+</div>
+</div>
+
+
+</body>
+</html>
+

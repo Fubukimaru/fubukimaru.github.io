@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+    <base href="http://www.gamerachan.org/fubu/dijkstra/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Fubu">
+
+<meta name="description" content="">
+
+<title>Sony HitBit 55/75P dead VRAM diagnosis</title>
+<meta name="generator" content="Hugo 0.92.2" />
+<link rel="stylesheet" href="css/pojoaque.min.css">
+<script src="js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<link  href="http://www.gamerachan.org/fubu/dijkstra//css/theme.min.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="http://www.gamerachan.org/fubu/dijkstra/img/favicon.png">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    
+    <h3 class="home-link">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/"> ⊳Root</a>
+        <a href="index.xml"> ⊳RSS</a> 
+    </h3>
+
+    
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/code/">code</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/hardware/">hardware</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/linux/">linux</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/misc/">misc</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/msx/">msx</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/music/">music</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Sony HitBit 55/75P dead VRAM diagnosis</h1>
+<h4>Published 2017-02-25 10:48:47</h4>
+<article>
+    <p>Hey!</p>
+<p>Recently I bought a broken 75P just for fun (and well, it was cheap :)). It had a video problem which, after reading a couple of msx.org posts (<a href="https://www.msx.org/forum/msx-talk/hardware/hit-bit-wbroken-graphics?page=0">Hit-bit With Broken Graphics</a> and <a href="https://www.msx.org/forum/msx-talk/hardware/sony-hb-75b-black-screen">75P black screen</a> mainly), I believed it was a <a href="https://www.msx.org/forum/msx-talk/hardware/hit-bit-wbroken-graphics?page=2">problem of VRAM as Grauw pointed</a>.</p>
+<p>That was a clever way to debug it. Watching how Basic characters are output, you can see which bit is broken in the ASCII chart. Why can you point to which bank is failing if a bit fails?</p>
+<p>Look at this:</p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/wp-content/uploads/2017/02/IMG_20170225_105225.jpg"><!-- raw HTML omitted --></a></p>
+<p>This is the VRAM (One chip was removed for the photo. We put sockets on every spot in order to replace future dead chips and for further testing). Each byte has one bit save in one bank.</p>
+<p>So, what happens if you remove one chip simulating its death? Let’s check.</p>
+<p>If we remove IC3:</p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/wp-content/uploads/2017/02/vlcsnap-2017-02-25-10h54m06s353.png"><!-- raw HTML omitted --></a></p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/wp-content/uploads/2017/02/vlcsnap-2017-02-25-10h55m58s415.png"><!-- raw HTML omitted --></a></p>
+<p> </p>
+<p>If we remove IC4:</p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/wp-content/uploads/2017/02/vlcsnap-2017-02-25-10h57m25s371.png"><!-- raw HTML omitted --></a></p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/wp-content/uploads/2017/02/vlcsnap-2017-02-25-10h57m36s441.png"><!-- raw HTML omitted --></a></p>
+<p> </p>
+<p>If we remove IC5:</p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/wp-content/uploads/2017/02/vlcsnap-2017-02-25-10h59m01s454.png"><!-- raw HTML omitted --></a></p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/wp-content/uploads/2017/02/vlcsnap-2017-02-25-10h59m15s413.png"><!-- raw HTML omitted --></a></p>
+<p> </p>
+<p>If we remove IC6:</p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/wp-content/uploads/2017/02/vlcsnap-2017-02-25-11h04m54s215.png"><!-- raw HTML omitted --></a></p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/wp-content/uploads/2017/02/vlcsnap-2017-02-25-11h05m08s374.png"><!-- raw HTML omitted --></a></p>
+<p>This was the problem I had, this where the 5th bit is saved. We thought it would be on IC9, but no.</p>
+<p> </p>
+<p>Now we jump to the other column:</p>
+<p>No IC9:</p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/wp-content/uploads/2017/02/vlcsnap-2017-02-25-11h06m28s327.png"><!-- raw HTML omitted --></a></p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/wp-content/uploads/2017/02/vlcsnap-2017-02-25-11h06m41s090.png"><!-- raw HTML omitted --></a></p>
+<p> </p>
+<p>No IC10:</p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/wp-content/uploads/2017/02/vlcsnap-2017-02-25-11h07m36s284.png"><!-- raw HTML omitted --></a></p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/wp-content/uploads/2017/02/vlcsnap-2017-02-25-11h07m47s678.png"><!-- raw HTML omitted --></a></p>
+<p> </p>
+<p>IC11:</p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/wp-content/uploads/2017/02/vlcsnap-2017-02-25-11h11m51s883.png"><!-- raw HTML omitted --></a></p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/wp-content/uploads/2017/02/vlcsnap-2017-02-25-11h12m07s416.png"><!-- raw HTML omitted --></a></p>
+<p> </p>
+<p>Finally, IC12:</p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/wp-content/uploads/2017/02/vlcsnap-2017-02-25-11h12m41s277.png"><!-- raw HTML omitted --></a></p>
+<p><a href="http://www.gamerachan.org/fubu/dijkstra/wp-content/uploads/2017/02/vlcsnap-2017-02-25-11h12m55s006.png"><!-- raw HTML omitted --></a></p>
+<p>Things to keep in mind:</p>
+<ul>
+<li>Before changing a vram chip, check if all the paths are connected to the VDP, maybe the problem is there and not on the chip.</li>
+<li>Try getting 4116 chips (there are plenty online). We tried to adapt 8118 chips which at first glance were compatible but it ended up in a black screen.</li>
+<li>Also notice that with the removal/death of some chips, you could have some flickering.</li>
+<li><strong>Also important is to point that Basic doesn’t work properly (commands are not understood) if VRAM is failing.</strong></li>
+<li>Notice that we have only seen here what happens if one chip is broken, if several chips are broken, best way to test could be piggybacking a chip that works or buy 8 new chips and directly replace them (always use a socket for fast changes in the future :)).</li>
+</ul>
+<p>This couldn’t have been possible with the help of <a href="http://aamsx.com">AAMSX crew</a>, in special Makinavaja (and his beers), JamQue and DoraemonPPC.</p>
+<p>I hope you also get a working machine out of a broken one :).</p>
+
+</article>
+
+
+
+</div>
+</div>
+
+
+</body>
+</html>
+

@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+    <base href="http://www.gamerachan.org/fubu/dijkstra/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Fubu">
+
+<meta name="description" content="">
+
+<title>CLI Recommendations</title>
+<meta name="generator" content="Hugo 0.92.2" />
+<link rel="stylesheet" href="css/pojoaque.min.css">
+<script src="js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<link  href="http://www.gamerachan.org/fubu/dijkstra//css/theme.min.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="http://www.gamerachan.org/fubu/dijkstra/img/favicon.png">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    
+    <h3 class="home-link">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/"> ⊳Root</a>
+        <a href="index.xml"> ⊳RSS</a> 
+    </h3>
+
+    
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/code/">code</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/hardware/">hardware</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/linux/">linux</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/misc/">misc</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/msx/">msx</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/music/">music</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>CLI Recommendations</h1>
+<h4>Published 2018-05-11 20:51:09</h4>
+<article>
+    <p>Lately I have been using a lot CLI (Command Line Interface) applications for
+everything, mainly because they enhance the <em>just keyboard</em> user expirence along
+with a great functionallity with a low resource footprint. Yes, it may be harder
+to use them and harder to configure, but I think the outcome is satisfiying.</p>
+<p>I will introduce a bit the applications and where to start without much detail,
+because there&rsquo;s a lot of documentation already available :).</p>
+<h2 id="mpdmopidy">MPD/Mopidy</h2>
+<p><a href="https://wiki.archlinux.org/index.php/Music_Player_Daemon">MPD</a> stands for Music
+Player Daemon. And it&rsquo;s just that. Imagine that your music player, ideally
+winamp or something like it, is in fact two applications, a controller (the
+interface) and the audio player. So&hellip; that&rsquo;s how MPD works.</p>
+<p>You have MPD as a regular linux system daemon and you connect to it using an
+application. In my case I use
+<a href="https://wiki.archlinux.org/index.php/ncmpcpp">ncmpcpp</a>, which is a CLI
+interface for MPD. Yes, the name has meaning.</p>
+<p>I remember using it years ago claiming <em>&ldquo;WTF is this&rdquo;</em> and then downloaded a GUI
+client for MPD. Oh boy was I wrong. This application provides everything you
+need for listening to music, like browsing, searching for lyrics and so on.</p>
+<p>There are a lot of interfaces for this daemon, even Android and web interfaces,
+so if you plan to mount a jukebox, I think this service is appropiate for that.</p>
+<p>A final note: Mopidy is an MPD-inspired MPD. It&rsquo;s written in python and it has a
+lot of addons and great community. I have it so I can listen to spotify stuff on
+my ncmpcpp.</p>
+<h2 id="khal--vdirsyncer">Khal + vdirsyncer</h2>
+<p>The other day I was wondering&hellip; Is there any lightweight application that I can
+use for checking my calendar (synchronized using CalDav) without opening
+Thunderbird everytime? California depends on gnome, Kalendar on KDE&hellip; what a
+mess. But then I found about Khal and vdirsyncer.</p>
+<p><a href="https://github.com/pimutils/khal">Khal</a> is a simple CLI calendar application
+with few configuration parameters that works just as I need. It opens fast and
+with the help of the other application is able to deal with CalDav.</p>
+<p><a href="https://github.com/pimutils/vdirsyncer">Vdirsyncer</a> is an application that
+synchronizes two CalDav/CardDav directories in general (client-server or
+server-server). It downloads and uploads changes whenever you execute it. The
+configuration is not so difficult but mind that if you want to use a keyring for
+security issues you may need to do additional steps (all covered by the official
+configuration document).</p>
+<p>With these two applications we have an online synchronized CLI cool calendar.</p>
+<h2 id="muttneomutt">Mutt/Neomutt</h2>
+<p>These two are email client applications for console. The configuration is not
+trivial, that&rsquo;s why I haven&rsquo;t still used them, but I recommend checking on them
+given the recommendations I have received :). If I feel like it, I will have a
+post on this too.</p>
+<p>I hope this post have given you a couple of pointers of cool stuff to check. I
+think you won&rsquo;t regret trying these applications. If you would like more detail
+on any of them, please tell me.</p>
+
+</article>
+
+
+
+</div>
+</div>
+
+
+</body>
+</html>
+

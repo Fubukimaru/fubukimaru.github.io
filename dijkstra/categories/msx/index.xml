@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MSX on El Fubu</title>
+    <link>http://www.gamerachan.org/fubu/dijkstra/categories/msx/</link>
+    <description>Recent content in MSX on El Fubu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-UK</language>
+    <lastBuildDate>Sun, 13 Mar 2022 07:37:39 +0100</lastBuildDate><atom:link href="http://www.gamerachan.org/fubu/dijkstra/categories/msx/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Modifying a Sony Hitbit 10P to use a standard barrel jack power supply</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2022-03-13-hitbit10p/</link>
+      <pubDate>Sun, 13 Mar 2022 07:37:39 +0100</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2022-03-13-hitbit10p/</guid>
+      <description>Greetings everyone!
+A couple of weeks ago I got a Sony HitBit 10p from a mechanical keyboard enthusiast from the University, a great guy :). He know where to leave MSX things. There was a particular issue: There was no power supply. After changing one power supply for a Sony HB-T7 I thought that it would not be much of a problem. And actually it was not!
+
+I found a tutorial in spanish on how to do this with a phone charger.</description>
+    </item>
+    
+    <item>
+      <title>How to config your Vortex Tracker for the MSX computers family</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2021-08-22-vortex_tracker_msx/</link>
+      <pubDate>Sun, 22 Aug 2021 19:56:31 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2021-08-22-vortex_tracker_msx/</guid>
+      <description>Hello my friends!
+This is a reminder for me and for the future generations to come. I&amp;rsquo;m not going to show you anything very magical or new, but this happen to me and I didn&amp;rsquo;t have clue about it. So if you didn&amp;rsquo;t know, now you will!
+Are you tired of compsing something in Vortex Tracker and hearing something odd when playing it in the machine? Your tracker might be wrongly configured!</description>
+    </item>
+    
+    <item>
+      <title>BAIXO&#39;s Bitlogic Mystery</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2019-10-31-baixo_bitlogic/</link>
+      <pubDate>Thu, 31 Oct 2019 10:34:48 +0100</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2019-10-31-baixo_bitlogic/</guid>
+      <description>So it seems that the truth is out about Bitlogic and the BAIXO Corporation.
+Let me share it with you all:
+  Beware with AI.</description>
+    </item>
+    
+    <item>
+      <title>Get the most out of MSXHub</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2019-10-12-get_most_from_msxhub/</link>
+      <pubDate>Sat, 12 Oct 2019 14:48:22 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2019-10-12-get_most_from_msxhub/</guid>
+      <description>In this post I&amp;rsquo;ll introduce MSXHub and how to use it in a very &amp;ldquo;linuxy&amp;rdquo; way just by organizing our packages a bit. You&amp;rsquo;ll need an MSX with MSX-DOS (probably in a flashcart) along with a network card and your fingers.
+Introduction to MSXHub MSXHub is a superb repository tool for our MSX Systems that allows us to download MSX software (tools, games&amp;hellip;) directly from our MSX without needing a computer.</description>
+    </item>
+    
+    <item>
+      <title>Changing MSX HB-T7 Power Supply Unit</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2019-07-09-changing_t7_power_unit/</link>
+      <pubDate>Tue, 09 Jul 2019 08:03:18 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2019-07-09-changing_t7_power_unit/</guid>
+      <description>Hellllooooo everyone!
+I&amp;rsquo;m alive, again. Maki asked me to make a blog post about how we changed the MSX HitBit T7 japanese power supply unit (from now on PSU) for a more modern and european one. So, let&amp;rsquo;s do this.
+Update (2020-05-29): Victor Muñoz tutorial Victor Muñoz followed this post (plus the discussion we have had on email) and did this mod. He has shared with me a PDF containing the tutorial he has made.</description>
+    </item>
+    
+    <item>
+      <title>Connecting to modern Instant Messaging services with an MSX</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2018-04-08-connecting-to-modern-instant-messaging-services-with-an-msx/</link>
+      <pubDate>Sun, 08 Apr 2018 20:11:15 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2018-04-08-connecting-to-modern-instant-messaging-services-with-an-msx/</guid>
+      <description>Hello!
+It has been a while since the last post. Yes I’m alive.
+So, in this post I will introduce you to two marvelous concepts:
+ BitlBee IRC on an MSX with an TCP/IP UNAPI compatible network card.  Let’s begin…
+Introduction Why would you do that? I mean, there are more efficient ways to communicate with other people that require less effort, right?
+Well, here are my two cents for the first point, BitlBee.</description>
+    </item>
+    
+    <item>
+      <title>MSX2 Sony HB-F5: SCART to Japanese21</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2017-09-30-msx2-sony-hb-f5-scart-to-japanese21/</link>
+      <pubDate>Sat, 30 Sep 2017 18:10:15 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2017-09-30-msx2-sony-hb-f5-scart-to-japanese21/</guid>
+      <description>We have adapted a standard European SCART cable to use it with an MSX2 HB-F5. You have to change the pins of one of the ends (the connector that will be on the MSX) as follows:
+**SCART – Japanese21
+** X means not connected.
+ 1 – X 2 – 6 3 – X 4 – 3 5 – 8 6 – 2 7 – 20 8 – X 9 – 7 10 – X 11 – 19 12 – X 13 – 13 14 – 14 15 – 15 16 – 16 17 – 17 18 – 18 19 – X 20 – 10  </description>
+    </item>
+    
+    <item>
+      <title>Z80 For Loop</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2017-07-05-msx-for/</link>
+      <pubDate>Wed, 05 Jul 2017 08:10:27 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2017-07-05-msx-for/</guid>
+      <description>WHILE – FOR:
+We usually use B as counter.
+LD C, 5 LD A, 0 LD B, 100 .NEXT2: push BC LD B, 10 .NEXT: ADD A, C DJNZ .NEXT pop BC DJNZ .NEXT2 </description>
+    </item>
+    
+    <item>
+      <title>Sony HitBit 55/75P dead VRAM diagnosis</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2017-02-25-sony-hitbit-5575p-dead-vram-diagnosis/</link>
+      <pubDate>Sat, 25 Feb 2017 10:48:47 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2017-02-25-sony-hitbit-5575p-dead-vram-diagnosis/</guid>
+      <description>Hey!
+Recently I bought a broken 75P just for fun (and well, it was cheap :)). It had a video problem which, after reading a couple of msx.org posts (Hit-bit With Broken Graphics and 75P black screen mainly), I believed it was a problem of VRAM as Grauw pointed.
+That was a clever way to debug it. Watching how Basic characters are output, you can see which bit is broken in the ASCII chart.</description>
+    </item>
+    
+    <item>
+      <title>MSX2Cas</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2016-09-08-msx2cas/</link>
+      <pubDate>Thu, 08 Sep 2016 07:10:55 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2016-09-08-msx2cas/</guid>
+      <description>Very cool application for the phone. You can easily load .cas files on the phone and play them :).
+  </description>
+    </item>
+    
+    <item>
+      <title>asMSX bugfix 1: Ifs on .megarom</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2016-09-03-asmsx-bugfix-1-ifs-on-megarom/</link>
+      <pubDate>Sat, 03 Sep 2016 12:49:45 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2016-09-03-asmsx-bugfix-1-ifs-on-megarom/</guid>
+      <description>Hello!
+Finally some improvements on asMSX. At the start of this project JamQue told me that he had issues using ifs when the “.megarom” clause is active. The issue correction can be seen here in Github.
+The problem was that when generating a byte (for example, an LD instruction) it checks if it is able to generate it if the condition established for this level allows it.
+Original:
+The first if will only affect the if(type!</description>
+    </item>
+    
+    <item>
+      <title>Learning Bison and Flex: The calculator</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2016-08-20-learning-bison-and-flex-the-calculator/</link>
+      <pubDate>Sat, 20 Aug 2016 18:28:25 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2016-08-20-learning-bison-and-flex-the-calculator/</guid>
+      <description>Hello everynyan,
+I’m learning how Bison and Flex work with an O’Reilly book and there can be found an example on how to build a calculator (which has an error on the code, probably there are more in the book, that’s why it has that kind of critics, but it works.).
+I ended up making an extension on it just to test my forgotten grammar skills. The code is the following:</description>
+    </item>
+    
+    <item>
+      <title>Understanding asMSX Volume 2: lex.l</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2016-08-20-understanding-asmsx-volume-2-lex-l/</link>
+      <pubDate>Fri, 19 Aug 2016 23:27:42 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2016-08-20-understanding-asmsx-volume-2-lex-l/</guid>
+      <description>Welcome back to the mystery machine!
+Today, the spooky lex.l. As we saw in the previous post this file is full with constants, but to be more precise this is the file where you tell how to treat every string found. In fact, constants are not defined in this file but in dura.y,
+For example:
+ “ld return MNEMO_LD”: Whenever you find a string that’s which characters ld, treat is as a token with value MNEMO_LD (Mnemotechnic for Load instruction).</description>
+    </item>
+    
+    <item>
+      <title>Understanding asMSX Volume 1: Understanding the structure of the code</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2016-08-17-understanding-asmsx-volume-1-understanding-the-structure-of-the-code/</link>
+      <pubDate>Tue, 16 Aug 2016 23:00:08 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2016-08-17-understanding-asmsx-volume-1-understanding-the-structure-of-the-code/</guid>
+      <description>Hello!
+Welcome to another trip into another dark cave. Today we meet asMSX, an assembler for MSX’s Z80 made by Pitpan and bought and released with GPL license by cjv99 (Thanks!).
+Motivation
+It’s known that this assembler has some bugs, e.g. skipping IFDEFs when using MegaROM so there is an interest on knowing the internals of the code in order to fix this kind of bugs. My goal is not directly fixing bugs of this code but to provide more information about the code so all the people from the community may get themselves the code and fix it if there are any new bugs.</description>
+    </item>
+    
+  </channel>
+</rss>

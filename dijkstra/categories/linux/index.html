@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+    <base href="http://www.gamerachan.org/fubu/dijkstra/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Fubu">
+
+<meta name="description" content="">
+
+<title>Linux</title>
+<meta name="generator" content="Hugo 0.92.2" />
+<link rel="stylesheet" href="css/pojoaque.min.css">
+<script src="js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<link  href="http://www.gamerachan.org/fubu/dijkstra//css/theme.min.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="http://www.gamerachan.org/fubu/dijkstra/img/favicon.png">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    
+    <h3 class="home-link">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/"> ⊳Root</a>
+        <a href="index.xml"> ⊳RSS</a> 
+    </h3>
+
+    
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/code/">code</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/hardware/">hardware</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/linux/">linux</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/misc/">misc</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/msx/">msx</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/music/">music</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+
+<div class="articles-list">
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2021-06-18-testing_dithering/">Testing dithering and color reduction</a> - 2021-06-18 17:36:52</h3>
+        Hello!
+I&rsquo;m trying to convert images so that they are lighter. I got the idea from Low-Tech Magazine and got some help and information from a good guy.
+Using ImageMagick:
+convert input.jpg -set colorspace Gray -ordered-dither o8x8 -colors 2 output.gif From this image:
+We get this one:
+From 72KB to 16KB. Looks a lot like the gameboy camera actually. There are other dithering algorithms, but for this photo the ordered-dither gave the best picture.
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2019-09-03-proper_multiline_weechat/">Multiline support in weechat</a> - 2019-09-03 16:00:52</h3>
+        By default weechat doesn&rsquo;t support multiline messages, but you can have that using the multiline.pl. In order to install it just run weechat and write /script. There you&rsquo;ll see a lot of nice scripts to customize weechat. Write multiline and press return to filter the plugins by that keyword. Then just select it if it&rsquo;s not selected already and then write i then return. Then you&rsquo;ll have multiline enabled :).
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2019-08-19-raspbian_9_and_librtlsdr-dev_package/">Raspbian 9 and librtlsdr-dev package</a> - 2019-08-19 13:12:15</h3>
+        I tried to install librtlsdr-dev package and for some reasons I got a nasty error:
+&gt; sudo apt-get install librtlsdr-dev ... The following packages have unmet dependencies: librtlsdr-dev : Depends: libusb-1.0-0-dev but it is not installable I noticed that there was no lib-usb-1.0-0-dev package, so the repository is inconsistent. So what I did was to install the package from Debian Stretch that can be downloaded from here.
+You can install it as follows:
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2018-05-11-cli-recommendations/">CLI Recommendations</a> - 2018-05-11 20:51:09</h3>
+        Lately I have been using a lot CLI (Command Line Interface) applications for everything, mainly because they enhance the just keyboard user expirence along with a great functionallity with a low resource footprint. Yes, it may be harder to use them and harder to configure, but I think the outcome is satisfiying.
+I will introduce a bit the applications and where to start without much detail, because there&rsquo;s a lot of documentation already available :).
+    </article>
+    
+    <article>
+        <h3>⊳ <a href="http://www.gamerachan.org/fubu/dijkstra/2017-02-01-multiple-x-sessions-on-the-same-computer/">Multiple X sessions on the same computer</a> - 2017-02-01 17:29:55</h3>
+        You can do as this tutorial says:
+    </article>
+    
+</div>
+
+</div>
+</div>
+
+
+</body>
+</html>
+

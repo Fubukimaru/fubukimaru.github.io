@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on El Fubu</title>
+    <link>http://www.gamerachan.org/fubu/dijkstra/categories/</link>
+    <description>Recent content in Categories on El Fubu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-UK</language>
+    <lastBuildDate>Sun, 13 Mar 2022 07:37:39 +0100</lastBuildDate><atom:link href="http://www.gamerachan.org/fubu/dijkstra/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hardware</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/categories/hardware/</link>
+      <pubDate>Sun, 13 Mar 2022 07:37:39 +0100</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/categories/hardware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MSX</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/categories/msx/</link>
+      <pubDate>Sun, 13 Mar 2022 07:37:39 +0100</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/categories/msx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Music</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/categories/music/</link>
+      <pubDate>Sun, 22 Aug 2021 19:56:31 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/categories/music/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Misc</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/categories/misc/</link>
+      <pubDate>Wed, 14 Jul 2021 04:58:05 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/categories/misc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/categories/linux/</link>
+      <pubDate>Fri, 18 Jun 2021 17:36:52 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/categories/code/</link>
+      <pubDate>Tue, 15 Jun 2021 19:39:47 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/categories/code/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

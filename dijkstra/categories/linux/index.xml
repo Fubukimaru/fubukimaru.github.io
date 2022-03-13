@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on El Fubu</title>
+    <link>http://www.gamerachan.org/fubu/dijkstra/categories/linux/</link>
+    <description>Recent content in Linux on El Fubu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-UK</language>
+    <lastBuildDate>Fri, 18 Jun 2021 17:36:52 +0200</lastBuildDate><atom:link href="http://www.gamerachan.org/fubu/dijkstra/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testing dithering and color reduction</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2021-06-18-testing_dithering/</link>
+      <pubDate>Fri, 18 Jun 2021 17:36:52 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2021-06-18-testing_dithering/</guid>
+      <description>Hello!
+I&amp;rsquo;m trying to convert images so that they are lighter. I got the idea from Low-Tech Magazine and got some help and information from a good guy.
+Using ImageMagick:
+convert input.jpg -set colorspace Gray -ordered-dither o8x8 -colors 2 output.gif From this image:
+We get this one:
+From 72KB to 16KB. Looks a lot like the gameboy camera actually. There are other dithering algorithms, but for this photo the ordered-dither gave the best picture.</description>
+    </item>
+    
+    <item>
+      <title>Multiline support in weechat</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2019-09-03-proper_multiline_weechat/</link>
+      <pubDate>Tue, 03 Sep 2019 16:00:52 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2019-09-03-proper_multiline_weechat/</guid>
+      <description>By default weechat doesn&amp;rsquo;t support multiline messages, but you can have that using the multiline.pl. In order to install it just run weechat and write /script. There you&amp;rsquo;ll see a lot of nice scripts to customize weechat. Write multiline and press return to filter the plugins by that keyword. Then just select it if it&amp;rsquo;s not selected already and then write i then return. Then you&amp;rsquo;ll have multiline enabled :).</description>
+    </item>
+    
+    <item>
+      <title>Raspbian 9 and librtlsdr-dev package</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2019-08-19-raspbian_9_and_librtlsdr-dev_package/</link>
+      <pubDate>Mon, 19 Aug 2019 13:12:15 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2019-08-19-raspbian_9_and_librtlsdr-dev_package/</guid>
+      <description>I tried to install librtlsdr-dev package and for some reasons I got a nasty error:
+&amp;gt; sudo apt-get install librtlsdr-dev ... The following packages have unmet dependencies: librtlsdr-dev : Depends: libusb-1.0-0-dev but it is not installable I noticed that there was no lib-usb-1.0-0-dev package, so the repository is inconsistent. So what I did was to install the package from Debian Stretch that can be downloaded from here.
+You can install it as follows:</description>
+    </item>
+    
+    <item>
+      <title>CLI Recommendations</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2018-05-11-cli-recommendations/</link>
+      <pubDate>Fri, 11 May 2018 20:51:09 +0200</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2018-05-11-cli-recommendations/</guid>
+      <description>Lately I have been using a lot CLI (Command Line Interface) applications for everything, mainly because they enhance the just keyboard user expirence along with a great functionallity with a low resource footprint. Yes, it may be harder to use them and harder to configure, but I think the outcome is satisfiying.
+I will introduce a bit the applications and where to start without much detail, because there&amp;rsquo;s a lot of documentation already available :).</description>
+    </item>
+    
+    <item>
+      <title>Multiple X sessions on the same computer</title>
+      <link>http://www.gamerachan.org/fubu/dijkstra/2017-02-01-multiple-x-sessions-on-the-same-computer/</link>
+      <pubDate>Wed, 01 Feb 2017 17:29:55 +0000</pubDate>
+      
+      <guid>http://www.gamerachan.org/fubu/dijkstra/2017-02-01-multiple-x-sessions-on-the-same-computer/</guid>
+      <description>You can do as this tutorial says:</description>
+    </item>
+    
+  </channel>
+</rss>

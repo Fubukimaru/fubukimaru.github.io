@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+    <base href="http://www.gamerachan.org/fubu/dijkstra/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="author" content="Fubu">
+
+<meta name="description" content="">
+
+<title>Pyspark and UDF types problem</title>
+<meta name="generator" content="Hugo 0.92.2" />
+<link rel="stylesheet" href="css/pojoaque.min.css">
+<script src="js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+<link  href="http://www.gamerachan.org/fubu/dijkstra//css/theme.min.css" rel="stylesheet" type="text/css">
+<link rel="icon" type="image/png" href="http://www.gamerachan.org/fubu/dijkstra/img/favicon.png">
+
+</head>
+<body>
+<div class="page-container container-fluid">
+<div class="col-md-3 menu">
+    <nav class="col-md-3">
+    
+    <h3 class="home-link">
+        <a href="http://www.gamerachan.org/fubu/dijkstra/"> ⊳Root</a>
+        <a href="index.xml"> ⊳RSS</a> 
+    </h3>
+
+    
+
+    
+
+    
+    <div id="categories" class="open">
+        <h3 data-open="categories">Categories</h3>
+        <ul class="categories">
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/code/">code</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/hardware/">hardware</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/linux/">linux</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/misc/">misc</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/msx/">msx</a></li>
+            
+            <li><a href="http://www.gamerachan.org/fubu/dijkstra/categories/music/">music</a></li>
+            
+        </ul>
+    </div>
+    
+</nav>
+
+</div>
+<div class="col-md-9 content">
+
+<h1>Pyspark and UDF types problem</h1>
+<h4>Published 2020-11-02 12:20:05</h4>
+<article>
+    <p>Hello!</p>
+<p>Here is a fast note that might not be obvious. Beware with UDF types in PySpark.</p>
+<pre tabindex="0"><code>from pyspark.sql.functions import udf
+from pyspark.sql.types import IntegerType, FloatType
+
+
+def very_fun(idk):
+    return(22)
+    
+def floating_fun(idk):
+    return(22.0)
+
+df = sqlContext.createDataFrame(
+    [
+        (1, 'foo'), 
+        (2, 'bar'),
+    ],
+    ['id', 'txt'] 
+)    
+    
+funfun_int = udf(very_fun, IntegerType())
+funfun_float = udf(very_fun, FloatType())
+    
+floatingfun_int = udf(floating_fun, IntegerType())
+floatingfun_float = udf(floating_fun, FloatType())
+
+df = df.withColumn('funfun_int', funfun_int(df['id']))
+df = df.withColumn('funfun_float', funfun_float(df['id']))
+
+df = df.withColumn('floatingfun_int', floatingfun_int(df['id']))
+df = df.withColumn('floatingfun_float', floatingfun_float(df['id']))
+
+df.show()
+</code></pre><p>And the result is not very amusing:</p>
+<pre tabindex="0"><code>+---+---+----------+------------+---------------+-----------------+
+| id|txt|funfun_int|funfun_float|floatingfun_int|floatingfun_float|
++---+---+----------+------------+---------------+-----------------+
+|  1|foo|        22|        null|           null|             22.0|
+|  2|bar|        22|        null|           null|             22.0|
++---+---+----------+------------+---------------+-----------------+
+</code></pre><p>Conclusion: Know your types. Pyspark UDF is not going to do a cast for you.</p>
+<p>Nota: I haven&rsquo;t tested PandasUDF in this case, but I suppose it&rsquo;s going to be a
+bit more creative.</p>
+
+</article>
+
+
+
+</div>
+</div>
+
+
+</body>
+</html>
+
