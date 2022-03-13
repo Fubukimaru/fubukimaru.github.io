@@ -1,0 +1,2 @@
+# fubukimaru.github.io
+Web!
