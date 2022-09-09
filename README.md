@@ -2,5 +2,7 @@
 title: Alberto Gutiérrez Torre
 ---
 
-# fubukimaru.github.io
-Web!
+# Alberto Gutiérrez Torre
+
+I do things with machine learning, specially distributing it with federated
+learning
